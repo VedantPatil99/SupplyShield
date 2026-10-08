@@ -1,0 +1,45 @@
+{
+  "name": "supplyshield-backend",
+  "version": "1.0.0",
+  "description": "SupplyShield: pharmaceutical supply chain analytics, traceability, counterfeit detection and recall management (MongoDB + Neo4j)",
+  "main": "src/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node scripts/seed.js",
+    "seed:reset": "node scripts/seed.js --reset",
+    "test": "jest --runInBand",
+    "perf": "node scripts/perf.js",
+    "db:start": "node scripts/local-db.js start",
+    "db:stop": "node scripts/local-db.js stop",
+    "db:status": "node scripts/local-db.js status"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 60000,
+    "globalSetup": "./tests/globalSetup.js",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.6",
+    "express": "^4.22.3",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.5",
+    "morgan": "^1.12.1",
+    "neo4j-driver": "^5.28.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.3.1"
+  }
+}
