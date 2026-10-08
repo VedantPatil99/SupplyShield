@@ -128,10 +128,13 @@ The login page has one-click demo buttons for all of them. Passwords are bcrypt-
 1. `npm run db:start`, `npm run seed:reset`, `npm start`. Show `/api/health` and **Admin → Sync health** (counts match).
 2. **mfg_aarav**: register a batch → ship to DIST-IN-00001 → **dist_national** confirms receipt → ships on. Sync health shows
    the events and per-event lag; Neo4j Browser shows the new nodes.
-3. **Forward trace** BATCH-2025-0B0618 (regulator or mfg_meadow) → **Verify** it at PHARM-IN-00023 (✓) and as
-   **pharm_suspect** at PHARM-IN-00004 (✕: chain breaks at WHS-IN-00028/00033). Try a fabricated id (✕).
-4. **Regulator → Anomalies → Run detection**: 9 findings grouped by batch, with evidence; "View trace graph" shows the
-   provenance-gap edges in red.
+3. **Network map** of BATCH-2025-0B0618 (regulator): every company it passed through; red boxes and red dashed arrows mark
+   the deliveries with no traceable source. Click a company for its part in the journey. Then **Check if genuine** at
+   PHARM-IN-00023 (✓ Genuine) and, as **pharm_suspect**, at PHARM-IN-00004 (✕: both suppliers never received the batch). Try a
+   made-up batch number (✕). pharm_suspect's own map shows only its part: two flagged suppliers with no link to the maker.
+4. **Regulator → Suspicious activity → Run the checks now**: 9 findings grouped by batch, each with what happened and why it
+   matters; "See it on the network map" opens the map. Also open the map of a recalled batch (e.g. BATCH-2026-00A6CD): each
+   company shows a coloured dot for its recall response.
 5. **Recall**: mfg_vertex opens RECALL-2026-D7457A → **pharm_recall** sees the alert → acknowledge → quarantine → return →
    regulator sees the progress bar move. Optionally mfg_meadow initiates a new recall (preview shows the affected entities
    from graph traversal first).
@@ -174,6 +177,12 @@ conservation by design.
   `audit_log` and `transactions` reject updates/deletes at the Mongoose model level.
 - **Anomalies are also re-run automatically** 3 s after the sync projects a batch/shipment (debounced), besides on-demand runs.
 - **Recall preview endpoint** (`POST /recalls/preview`) added so the UI can show affected entities before confirming.
+- **Plain-language UI:** screens use everyday words ("Stock from an unknown source", "Check if genuine", "Set aside") with
+  the technical term shown small where it matters. All UI wording lives in `backend/public/js/copy.jsx`. Mapping to the report's
+  terms: Network map = forward trace (FR-4); Check if genuine = backward trace (FR-4); Suspicious activity = anomaly detection
+  (FR-5); System status = sync health; Activity log = audit log (FR-10).
+- **Network map scoping:** regulator, admin and the batch's manufacturer see a batch's whole map. Distributors, wholesalers and
+  pharmacies see only the deliveries leading to them and from them, so they can trace their stock without seeing competitors' business.
 
 ## What was actually verified vs. not
 
@@ -184,7 +193,7 @@ conservation by design.
   fan-out baseline 1.12 → threshold 5, DIST-IN-00001 reaches 18, next-highest sender 4; none of the 10 organic repeat-receipt pairs flagged.
 - Backward trace: BATCH-2025-0B0618 verifies at PHARM-IN-00023 via MFG-IN-00015 → DIST-IN-00013 → WHS-IN-00019 and fails at
   PHARM-IN-00004 (breaks at WHS-IN-00028 / WHS-IN-00033).
-- Jest: **51 tests pass** (`npm test`) covering auth, RBAC, batches/shipments/receipt with inventory conservation, trace, anomaly acceptance +
+- Jest: **55 tests pass** (`npm test`) covering auth, RBAC, batches/shipments/receipt with inventory conservation, trace, anomaly acceptance +
   idempotency, recall initiation (affected set = forward-trace recipients) and completion, sync (< 5 s), audit immutability.
 - Performance numbers in [`docs/PERFORMANCE.md`](docs/PERFORMANCE.md) are real measurements on one laptop.
 - UI: every role's views were exercised in a browser (Chromium) against the running app.

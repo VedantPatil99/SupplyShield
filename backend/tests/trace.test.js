@@ -31,6 +31,40 @@ describe('FR-4 forward trace', () => {
   });
 });
 
+describe('network map (visual tracking) access', () => {
+  test('regulator gets the whole map with recall statuses', async () => {
+    const res = await (await ctx.as('regulator1')).get('/api/trace/map/BATCH-2026-00A6CD');
+    expect(res.status).toBe(200);
+    expect(res.body.view).toBe('full');
+    expect(res.body.recall.recall_id).toBe('RECALL-2026-D7457A');
+    expect(Object.keys(res.body.recall.statuses).length).toBe(res.body.recall.total);
+  });
+
+  test('a pharmacy sees only its own part: where its stock came from', async () => {
+    const res = await (await ctx.as('pharm_suspect')).get('/api/trace/map/BATCH-2025-0B0618');
+    expect(res.status).toBe(200);
+    expect(res.body.view).toBe('neighbourhood');
+    expect(res.body.edges.every((e) => e.to.entity_id === 'PHARM-IN-00004' || e.from.entity_id === 'PHARM-IN-00004')).toBe(true);
+    expect(res.body.edges.map((e) => e.from.entity_id).sort()).toEqual(['WHS-IN-00028', 'WHS-IN-00033']);
+    expect(Object.keys(res.body.holdings)).toEqual(['PHARM-IN-00004']); // no competitors' stock levels
+    expect(res.body.anomalies).toEqual([]);
+  });
+
+  test("a legitimately supplied pharmacy's view includes its full upstream chain", async () => {
+    const tok = await ctx.as('pharm_healthplus');
+    const inv = await tok.get('/api/inventory?limit=1');
+    const batch = inv.body.items[0].batch_id;
+    const res = await tok.get(`/api/trace/map/${batch}`);
+    expect(res.status).toBe(200);
+    expect(res.body.edges.some((e) => e.from.entity_type === 'manufacturer')).toBe(true);
+  });
+
+  test('a company that never handled the batch is refused', async () => {
+    expect((await (await ctx.as('mfg_aarav')).get('/api/trace/map/BATCH-2025-0B0618')).status).toBe(403);
+    expect((await (await ctx.as('pharm_healthplus')).get('/api/trace/map/BATCH-2025-0B0618')).status).toBe(403);
+  });
+});
+
 describe('FR-4 backward trace / authenticity', () => {
   test('BATCH-2025-0B0618 at PHARM-IN-00023 verifies via MFG-IN-00015 -> DIST-IN-00013 -> WHS-IN-00019 -> PHARM-IN-00023', async () => {
     const res = await (await ctx.as('regulator1')).get('/api/trace/backward/BATCH-2025-0B0618?entity_id=PHARM-IN-00023');

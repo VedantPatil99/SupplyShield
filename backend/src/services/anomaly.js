@@ -36,7 +36,7 @@ async function detectProvenanceGap() {
     batch_id: r.batch_id,
     discriminator: r.sender,
     severity: 'high',
-    summary: `${r.sender} shipped ${r.batch_id} ${r.shipments.length} time(s) without ever producing or receiving it`,
+    summary: `${r.sender_name || r.sender} sent out this batch ${r.shipments.length === 1 ? 'once' : `${r.shipments.length} times`} without ever making it or receiving it`,
     details: {
       sender: r.sender, sender_name: r.sender_name, sender_type: typeOf(r.sender_labels),
       shipment_count: r.shipments.length, shipments: r.shipments,
@@ -59,7 +59,7 @@ async function detectMultiManufacturer() {
       batch_id: r.batch_id,
       discriminator: ids.join(','),
       severity: 'high',
-      summary: `${r.batch_id} is claimed by ${ids.length} manufacturers: ${ids.join(', ')}`,
+      summary: `${r.mfgs.length} manufacturers are recorded as the maker of this one batch: ${r.mfgs.map((m) => m.name || m.entity_id).join(' and ')}`,
       details: { product_name: r.product_name, manufacturers: r.mfgs },
     };
   });
@@ -88,7 +88,7 @@ async function detectFanIn(windowHours) {
       batch_id: r.batch_id,
       discriminator: r.receiver,
       severity: 'high',
-      summary: `${r.receiver} received ${r.batch_id} from ${senders.length} different senders ${minGap.toFixed(1)} h apart`,
+      summary: `${r.receiver_name || r.receiver} received this batch from ${senders.length} different suppliers only ${minGap.toFixed(1)} hours apart`,
       details: { receiver: r.receiver, receiver_name: r.receiver_name, senders, window_hours: windowHours, pairs: r.pairs },
     };
   });
@@ -120,7 +120,7 @@ async function detectReentrant(windowHours, provenanceGapShipmentIds) {
     batch_id: r.batch_id,
     discriminator: r.receiver,
     severity: 'medium',
-    summary: `${r.receiver} received ${r.batch_id} ${r.shipments.length} times over ${(r.spanSec / 3600).toFixed(1)} h, including stock with no provenance`,
+    summary: `${r.receiver_name || r.receiver} received this batch ${r.shipments.length} times within ${(r.spanSec / 3600).toFixed(0)} hours, and some of it came from a supplier that never had it`,
     details: { receiver: r.receiver, receiver_name: r.receiver_name, span_hours: r.spanSec / 3600, shipments: r.shipments },
   }));
 }
@@ -167,7 +167,7 @@ async function detectFanOut({ windowHours, multiplier, minThreshold }) {
       batch_id: dominant,
       discriminator: r.sender,
       severity: r.top.fanout >= 2 * threshold ? 'high' : 'medium',
-      summary: `${r.sender} shipped to ${r.top.fanout} distinct receivers within ${windowHours} h (threshold ${threshold.toFixed(2)})`,
+      summary: `${r.sender_name || r.sender} shipped to ${r.top.fanout} different buyers within ${windowHours} hours; a typical company ships to about ${baseline.toFixed(1)} a day`,
       details: {
         sender: r.sender, sender_name: r.sender_name, sender_type: typeOf(r.sender_labels),
         distinct_receivers: r.top.fanout, window_start: win[0].dispatch_timestamp, window_end: win[win.length - 1].dispatch_timestamp,

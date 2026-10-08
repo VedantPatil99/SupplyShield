@@ -1,17 +1,18 @@
 // App shell: role-driven navigation + hash routing.
 const NAV = {
-  manufacturer: [['overview', 'Overview'], ['batches', 'My batches'], ['shipments', 'Shipments'], ['trace', 'Forward trace'], ['recalls', 'Recalls'], ['anomalies', 'Anomaly alerts'], ['inventory', 'Inventory']],
-  distributor: [['overview', 'Overview'], ['shipments', 'Shipments'], ['inventory', 'Inventory'], ['recalls', 'Recalls'], ['batches', 'Batches']],
-  wholesaler: [['overview', 'Overview'], ['shipments', 'Shipments'], ['inventory', 'Inventory'], ['recalls', 'Recalls'], ['batches', 'Batches']],
-  pharmacy: [['overview', 'Overview'], ['verify', 'Verify authenticity'], ['inventory', 'Stock'], ['shipments', 'Deliveries'], ['recalls', 'Recalls']],
-  regulator: [['overview', 'Overview'], ['anomalies', 'Anomalies'], ['trace', 'Forward trace'], ['verify', 'Verify authenticity'], ['recalls', 'Recalls'], ['batches', 'Batches'], ['shipments', 'Shipments'], ['inventory', 'Inventory'], ['audit', 'Audit log']],
-  admin: [['overview', 'Overview'], ['sync', 'Sync health'], ['anomalies', 'Anomalies'], ['trace', 'Forward trace'], ['verify', 'Verify authenticity'], ['recalls', 'Recalls'], ['batches', 'Batches'], ['shipments', 'Shipments'], ['inventory', 'Inventory'], ['users', 'Users'], ['audit', 'Audit log']],
+  manufacturer: [['overview', 'Home'], ['batches', 'My batches'], ['shipments', 'Send & receive'], ['map', 'Network map'], ['recalls', 'Recalls'], ['anomalies', 'Suspicious activity'], ['inventory', 'My stock']],
+  distributor: [['overview', 'Home'], ['shipments', 'Send & receive'], ['inventory', 'My stock'], ['map', 'Network map'], ['recalls', 'Recalls'], ['batches', 'Batches']],
+  wholesaler: [['overview', 'Home'], ['shipments', 'Send & receive'], ['inventory', 'My stock'], ['map', 'Network map'], ['recalls', 'Recalls'], ['batches', 'Batches']],
+  pharmacy: [['overview', 'Home'], ['verify', 'Check if genuine'], ['map', 'Network map'], ['inventory', 'My stock'], ['shipments', 'Deliveries'], ['recalls', 'Recalls']],
+  regulator: [['overview', 'Home'], ['anomalies', 'Suspicious activity'], ['map', 'Network map'], ['verify', 'Check if genuine'], ['recalls', 'Recalls'], ['batches', 'Batches'], ['shipments', 'Shipments'], ['inventory', 'Stock'], ['audit', 'Activity log']],
+  admin: [['overview', 'Home'], ['sync', 'System status'], ['anomalies', 'Suspicious activity'], ['map', 'Network map'], ['verify', 'Check if genuine'], ['recalls', 'Recalls'], ['batches', 'Batches'], ['shipments', 'Shipments'], ['inventory', 'Stock'], ['users', 'Users'], ['audit', 'Activity log']],
 };
 
 const VIEWS = {
-  overview: Overview, batches: Batches, shipments: Shipments, inventory: Inventory, trace: Trace, verify: Verify,
+  overview: Overview, batches: Batches, shipments: Shipments, inventory: Inventory, map: NetworkMap, verify: Verify,
   anomalies: Anomalies, recalls: Recalls, sync: SyncHealth, users: Users, audit: Audit,
 };
+const ALIASES = { trace: 'map' }; // old links
 
 function Shell() {
   const { user, logout } = useAuth();
@@ -23,25 +24,26 @@ function Shell() {
   const View = allowed ? VIEWS[route] : null;
   const alertCount = alerts.data ? alerts.data.items.length : 0;
   useEffect(() => setMenu(false), [route]);
+  useEffect(() => { if (ALIASES[route]) navigate(ALIASES[route], params); }, [route, params]);
   useEffect(() => { document.title = `${(nav.find(([r]) => r === route) || [, 'SupplyShield'])[1]} · SupplyShield`; }, [route, nav]);
 
   return (
     <div className="shell">
       <nav className={`sidebar ${menu ? 'open' : ''}`} aria-label="Main">
-        <div className="brand"><ShieldIcon /><div>SupplyShield<small>Supply chain analytics</small></div></div>
+        <div className="brand"><ShieldIcon /><div>SupplyShield<small>Medicine tracking & recalls</small></div></div>
         {nav.map(([r, label]) => (
           <a key={r} href={`#/${r}`} className={`nav-item ${route === r ? 'active' : ''}`} aria-current={route === r ? 'page' : undefined}>
             {label}{r === 'overview' && alertCount ? <span className="count">{alertCount}</span> : null}
           </a>
         ))}
-        <div className="sidebar-foot">Synthetic demo data · rule-based detection (not ML)</div>
+        <div className="sidebar-foot">Demo with made-up data. Checks use fixed rules, not AI.</div>
       </nav>
       <div className="main">
         <header className="topbar">
           <button className="btn sm menu-btn" onClick={() => setMenu(!menu)} aria-label="Toggle menu">☰</button>
           <div className="spacer" />
           <div className="who">
-            <Badge kind="brand"><span className="role-badge">{ROLE_LABEL[user.role]}</span></Badge>
+            <Badge kind="brand"><span className="role-badge">{ROLE_INFO[user.role].title}</span></Badge>
             <div>
               <div className="name">{user.display_name || user.username}</div>
               <div className="entity">{user.entity ? `${user.entity_id} · ${user.entity.name}` : user.username}</div>

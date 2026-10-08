@@ -75,6 +75,7 @@ Body for `POST /batches`:
 | Method | Path | Roles | Description |
 |---|---|---|---|
 | GET | `/trace/forward/:batchId` | manufacturer (own batch), regulator, admin | `{batch, producers[], edges[], recipients[], hops, query_ms}`; each edge is a shipment with `from`/`to` entity |
+| GET | `/trace/map/:batchId` | anyone who can see the batch | Data for the visual Network map: `{batch, view, producers[], edges[], recall:{recall_id, statuses{entity_id: status}, returned, total}, holdings{entity_id: units}, anomalies[]}`. Regulator, admin and the batch's manufacturer get `view:"full"`; other companies get `view:"neighbourhood"`, which is only the deliveries upstream of them (where their stock came from) and downstream (where they sent it). They see only their own holdings and no anomaly list |
 | GET | `/trace/backward/:batchId?entity_id=` | pharmacy (own entity, `entity_id` ignored), regulator, admin | Authenticity check. `{verified, reasons[], producers[], chains[]}`. Each inbound shipment to the entity must chain back hop by hop, in time order, to a producing manufacturer (≤ 10 hops). `verified` requires every inbound chain complete and exactly one producer. Unknown batch → **404** with `verified:false` |
 
 ## Anomalies (FR-5)

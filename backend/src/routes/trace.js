@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { Batch } = require('../models');
+const { Batch, Recall, Inventory, Anomaly } = require('../models');
 const { ID } = require('../models/constants');
-const { requireRole } = require('../middleware/rbac');
+const { requireRole, isOversight } = require('../middleware/rbac');
+const { canSeeBatch, decorateBatch } = require('../services/scope');
 const { ah, notFound, forbidden, badRequest } = require('../utils/errors');
 const trace = require('../services/traceability');
 
@@ -16,6 +17,40 @@ router.get('/forward/:batchId', requireRole('manufacturer', 'regulator', 'admin'
   const result = await trace.forwardTrace(batchId);
   if (!result) throw notFound(`Batch ${batchId} not found in the graph`);
   res.json(result);
+}));
+
+// Network map of one batch for the visual page. Everyone who can see the batch may open it:
+// regulator/admin and the batch's manufacturer get the whole map; other companies get their own neighbourhood.
+router.get('/map/:batchId', ah(async (req, res) => {
+  const { batchId } = req.params;
+  const batch = await Batch.findById(batchId).lean();
+  if (!batch) throw notFound(`Batch ${batchId} not found`);
+  if (!(await canSeeBatch(req.user, batchId))) throw forbidden('This batch is outside your scope');
+  const g = await trace.batchGraph(batchId);
+  if (!g) throw notFound(`Batch ${batchId} not found in the graph`);
+
+  const full = isOversight(req.user) || req.user.entity_id === batch.manufacturer_id;
+  const edges = full ? g.edges : trace.neighbourhood(g.edges, req.user.entity_id);
+  const visible = new Set([...g.producers.map((p) => p.entity_id), ...edges.flatMap((e) => [e.from.entity_id, e.to.entity_id])]);
+
+  const recall = await Recall.findOne({ batch_ids: batchId }).sort({ status: -1, initiated_at: -1 }).lean(); // in_progress sorts first
+  const holdings = await Inventory.find({ batch_id: batchId, ...(full ? {} : { entity_id: req.user.entity_id }) }).lean();
+  const anomalies = full ? await Anomaly.find({ batch_id: batchId }).lean() : [];
+
+  res.json({
+    batch: decorateBatch(batch),
+    view: full ? 'full' : 'neighbourhood',
+    producers: g.producers,
+    edges,
+    recall: recall ? {
+      recall_id: recall._id, recall_class: recall.recall_class, reason: recall.reason, status: recall.status, initiated_at: recall.initiated_at,
+      statuses: Object.fromEntries(recall.affected_entities.filter((a) => visible.has(a.entity_id)).map((a) => [a.entity_id, a.status])),
+      total: recall.affected_entities.length,
+      returned: recall.affected_entities.filter((a) => a.status === 'returned').length,
+    } : null,
+    holdings: Object.fromEntries(holdings.map((h) => [h.entity_id, h.quantity_on_hand])),
+    anomalies: anomalies.map((a) => ({ type: a.type, discriminator: a.discriminator, severity: a.severity, status: a.status, summary: a.summary })),
+  });
 }));
 
 // FR-4 backward trace / authenticity: pharmacy (own entity only), regulator, admin (?entity_id=).

@@ -1,15 +1,31 @@
-const DEMO_USERS = [
-  { u: 'regulator1', p: 'Regulator@123', label: 'Regulator', hint: 'all anomalies, recalls, audit' },
-  { u: 'admin', p: 'Admin@123', label: 'Admin', hint: 'users, sync health' },
-  { u: 'mfg_aarav', p: 'Mfg@12345', label: 'Manufacturer', hint: 'Aarav Life Sciences' },
-  { u: 'dist_national', p: 'Dist@12345', label: 'Distributor', hint: 'DIST-IN-00001' },
-  { u: 'whs_city', p: 'Whs@12345', label: 'Wholesaler', hint: 'WHS-IN-00001' },
-  { u: 'pharm_healthplus', p: 'Pharm@12345', label: 'Pharmacy', hint: 'PHARM-IN-00001' },
-  { u: 'mfg_meadow', p: 'Mfg@12345', label: 'Manufacturer', hint: 'Meadow Pharma (planted batches)' },
-  { u: 'mfg_vertex', p: 'Mfg@12345', label: 'Manufacturer', hint: 'Vertex (open recall)' },
-  { u: 'pharm_recall', p: 'Pharm@12345', label: 'Pharmacy', hint: 'PHARM-IN-00042 (recall to act on)' },
-  { u: 'pharm_suspect', p: 'Pharm@12345', label: 'Pharmacy', hint: 'PHARM-IN-00004 (suspect stock)' },
-  { u: 'mfg_sunrise', p: 'Mfg@12345', label: 'Manufacturer', hint: 'Sunrise (fan-out batch)' },
+// Demo accounts grouped by what you'd want to show with them.
+const DEMO_GROUPS = [
+  {
+    title: 'Oversight',
+    users: [
+      { u: 'regulator1', p: 'Regulator@123', role: 'regulator', who: 'Drug regulator', hint: 'Best place to start: sees everything' },
+      { u: 'admin', p: 'Admin@123', role: 'admin', who: 'System administrator', hint: 'Users and system status' },
+    ],
+  },
+  {
+    title: 'Companies in the supply chain',
+    users: [
+      { u: 'mfg_aarav', p: 'Mfg@12345', role: 'manufacturer', who: 'Aarav Life Sciences', hint: 'Register and ship a new batch' },
+      { u: 'dist_national', p: 'Dist@12345', role: 'distributor', who: 'National Drug Distributors', hint: 'Receive and pass on stock' },
+      { u: 'whs_city', p: 'Whs@12345', role: 'wholesaler', who: 'City wholesaler', hint: 'Receive and pass on stock' },
+      { u: 'pharm_healthplus', p: 'Pharm@12345', role: 'pharmacy', who: 'HealthPlus Pharmacy', hint: 'Receive deliveries, check medicine' },
+    ],
+  },
+  {
+    title: 'Demo scenarios',
+    users: [
+      { u: 'pharm_suspect', p: 'Pharm@12345', role: 'pharmacy', who: 'Pharmacy with suspicious stock', hint: 'Checks a batch that turns out not genuine' },
+      { u: 'pharm_recall', p: 'Pharm@12345', role: 'pharmacy', who: 'Pharmacy holding recalled stock', hint: 'Responds to a recall step by step' },
+      { u: 'mfg_vertex', p: 'Mfg@12345', role: 'manufacturer', who: 'Vertex Formulations', hint: 'Follows its own recall' },
+      { u: 'mfg_meadow', p: 'Mfg@12345', role: 'manufacturer', who: 'Meadow Pharma', hint: 'Owns the batches with suspicious activity' },
+      { u: 'mfg_sunrise', p: 'Mfg@12345', role: 'manufacturer', who: 'Sunrise Pharmaceuticals', hint: 'Owns a batch shipped suspiciously widely' },
+    ],
+  },
 ];
 
 function Login() {
@@ -31,40 +47,44 @@ function Login() {
     <div className="login-wrap">
       <section className="login-hero">
         <div className="brand" style={{ padding: 0 }}><ShieldIcon size={40} /><div style={{ fontSize: 26 }}>SupplyShield</div></div>
-        <h1>Pharmaceutical supply chain analytics, traceability and recall management</h1>
-        <p>Combines established techniques (graph traversal, pattern detection, polyglot persistence) for pharma traceability:
-          MongoDB is the system of record, a change-stream sync service mirrors relationships into Neo4j, and graph queries power tracing,
-          recalls and suspicious-movement detection.</p>
-        <ul>
-          <li>Forward and backward tracing of any batch through the network</li>
-          <li>Five deterministic graph-pattern heuristics flag suspicious movement (rule-based, not machine learning)</li>
-          <li>Recall initiation from graph traversal, with per-entity progress tracking</li>
+        <h1>Know where every medicine came from, and stop the ones that shouldn't be sold.</h1>
+        <p>Every pack of medicine passes through several companies before it reaches a patient. SupplyShield records each hand-over, so you can:</p>
+        <ul className="hero-points">
+          <li><b>Track any batch</b> on a map of every company it passed through.</li>
+          <li><b>Check a pack is genuine</b> by following its delivery records back to the manufacturer.</li>
+          <li><b>Spot suspicious activity</b>, such as stock that appears from nowhere, with automatic checks.</li>
+          <li><b>Recall unsafe medicine</b>: everyone who received it is notified, and you can watch them respond.</li>
         </ul>
-        <p className="small">All data is synthetic, modelled on public sources (DEA ARCOS, Amico et al. 2024, openFDA recalls, FDA NDC).</p>
+        <p className="small">This is a demo. All companies and records are made up, modelled on public drug-supply data. The checks use fixed rules, not AI.</p>
       </section>
       <section className="login-panel">
         <div className="login-card stack">
           <div>
-            <h2 style={{ fontSize: 22 }}>Sign in</h2>
-            <p className="muted" style={{ margin: '4px 0 0' }}>Use your account or a demo role below.</p>
+            <h2 style={{ fontSize: 22 }}>Try it: pick a role</h2>
+            <p className="muted" style={{ margin: '4px 0 0' }}>Each button logs you in as a different kind of user.</p>
           </div>
-          <form className="stack" style={{ gap: 12 }} onSubmit={(e) => { e.preventDefault(); submit(); }}>
-            <label className="field">Username<input autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} required /></label>
-            <label className="field">Password<input type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required /></label>
-            <ErrorBox error={error} />
-            <button className="btn primary" disabled={busy} type="submit">{busy ? <Spinner /> : null} Sign in</button>
-          </form>
-          <div>
-            <div className="small muted" style={{ marginBottom: 8, fontWeight: 600 }}>DEMO QUICK LOGIN</div>
-            <div className="demo-grid">
-              {DEMO_USERS.map((d) => (
-                <button key={d.u} type="button" className="btn" disabled={busy} onClick={() => { setUsername(d.u); setPassword(d.p); submit(d.u, d.p); }}>
-                  <span>{d.label} <span className="mono small muted">{d.u}</span></span>
-                  <small>{d.hint}</small>
-                </button>
-              ))}
+          {DEMO_GROUPS.map((g) => (
+            <div key={g.title}>
+              <div className="small muted" style={{ marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.04em' }}>{g.title}</div>
+              <div className="demo-grid">
+                {g.users.map((d) => (
+                  <button key={d.u} type="button" className="btn" disabled={busy} onClick={() => { setUsername(d.u); setPassword(d.p); submit(d.u, d.p); }}>
+                    <span className="row" style={{ gap: 6 }}><b>{d.who}</b></span>
+                    <small>{ROLE_INFO[d.role].title} · {d.hint}</small>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
+          <ErrorBox error={error} />
+          <details>
+            <summary className="small muted" style={{ cursor: 'pointer' }}>Sign in with a username and password instead</summary>
+            <form className="stack" style={{ gap: 12, marginTop: 12 }} onSubmit={(e) => { e.preventDefault(); submit(); }}>
+              <label className="field">Username<input autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} required /></label>
+              <label className="field">Password<input type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required /></label>
+              <button className="btn primary" disabled={busy} type="submit">{busy ? <Spinner /> : null} Sign in</button>
+            </form>
+          </details>
         </div>
       </section>
     </div>

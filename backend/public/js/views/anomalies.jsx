@@ -1,35 +1,27 @@
-const TYPE_INFO = {
-  multi_manufacturer_batch: 'More than one manufacturer claims to have produced the same batch id (cloned identifier).',
-  duplicate_batch_fanin: 'The same batch reached one receiver from different senders within a short window.',
-  abnormal_fanout: 'One sender shipped to far more distinct receivers in a rolling window than the network baseline.',
-  reentrant_distribution: 'A receiver got the same batch repeatedly, including stock with no provenance.',
-  provenance_gap: 'A sender shipped a batch it never produced or received: stock appearing from nowhere.',
-};
-
 function Evidence({ a }) {
   const d = a.details || {};
   const rows = d.shipments || (d.pairs ? d.pairs.flatMap((p) => p.shipments.map((s, i) => ({ shipment_id: s, sender: p.senders[i], dispatch_timestamp: p.timestamps[i] }))) : null);
   return (
     <details className="evidence">
-      <summary>Evidence{rows ? ` (${rows.length} shipment${rows.length === 1 ? '' : 's'})` : ''}</summary>
+      <summary>Show the evidence{rows ? ` (${rows.length} ${rows.length === 1 ? 'delivery' : 'deliveries'})` : ''}</summary>
       {a.type === 'abnormal_fanout' ? (
         <div className="small" style={{ marginTop: 6 }}>
-          {d.distinct_receivers} distinct receivers between {fmt.dateTime(d.window_start)} and {fmt.dateTime(d.window_end)};
-          baseline {Number(d.baseline_per_sender_day).toFixed(2)} receivers/sender/day × {d.multiplier} → threshold {Number(d.threshold).toFixed(2)}.
+          {d.distinct_receivers} different buyers between {fmt.dateTime(d.window_start)} and {fmt.dateTime(d.window_end)}.
+          A typical company ships to {Number(d.baseline_per_sender_day).toFixed(1)} buyers a day; this check flags anything above {Number(d.threshold).toFixed(0)} in {d.window_hours} hours.
         </div>
       ) : null}
       {a.type === 'multi_manufacturer_batch' ? (
         <ul className="small" style={{ margin: '6px 0 0' }}>
-          {d.manufacturers.map((m) => <li key={m.entity_id}><span className="mono">{m.entity_id}</span> {m.name}{m.planted ? ` — planted edge (source ${m.source})` : ''}</li>)}
+          {d.manufacturers.map((m) => <li key={m.entity_id}><b>{m.name}</b> <span className="id-code">{m.entity_id}</span>{m.planted ? ': not the registered maker' : ': registered maker'}</li>)}
         </ul>
       ) : null}
       {rows ? (
         <div className="table-wrap">
           <table>
-            <thead><tr><th>Shipment</th><th>Sender</th><th>Receiver</th><th>Dispatched</th></tr></thead>
+            <thead><tr><th>Delivery</th><th>From</th><th>To</th><th>Date</th></tr></thead>
             <tbody>{rows.map((s) => (
               <tr key={s.shipment_id} className={s.provenance_gap ? 'flag' : ''}>
-                <td className="mono">{s.shipment_id}</td>
+                <td className="mono small">{s.shipment_id}</td>
                 <td className="mono small">{s.sender || d.sender || '—'}</td>
                 <td className="mono small">{s.receiver || d.receiver || '—'}</td>
                 <td className="small">{fmt.dateTime(s.dispatch_timestamp)}</td>
@@ -38,6 +30,7 @@ function Evidence({ a }) {
           </table>
         </div>
       ) : null}
+      <div className="small muted" style={{ marginTop: 6 }}>Technical name: <Tech>{CHECK_TEXT[a.type].tech}</Tech></div>
     </details>
   );
 }
@@ -56,14 +49,14 @@ function Anomalies() {
     try {
       const s = await api('/anomalies/run', { method: 'POST' });
       setLastRun(s);
-      toast(`Detection finished in ${s.duration_ms} ms: ${s.findings} finding(s), ${s.new_findings} new`, 'ok');
+      toast(`Checks finished in ${(s.duration_ms / 1000).toFixed(1)} s: ${s.findings} finding(s), ${s.new_findings} new`, 'ok');
       list.reload();
     } catch (e) { toast(e.message, 'bad'); } finally { setRunning(false); }
   };
   const review = async (a, newStatus) => {
     try {
       await api(`/anomalies/${encodeURIComponent(a._id)}`, { method: 'PATCH', body: { status: newStatus } });
-      toast(`Marked ${fmt.type(a.type)} on ${a.batch_id} as ${newStatus}`, 'ok');
+      toast(`"${CHECK_TEXT[a.type].title}" marked as ${statusText(newStatus).toLowerCase()}`, 'ok');
       list.reload();
     } catch (e) { toast(e.message, 'bad'); }
   };
@@ -81,52 +74,57 @@ function Anomalies() {
 
   return (
     <div className="stack">
-      <PageHead title="Anomaly findings"
-        sub="Five deterministic graph-pattern heuristics run over Neo4j (rule-based, not machine learning). Findings are grouped by batch.">
-        <Seg value={status} onChange={setStatus} options={[['open', 'Open'], ['reviewed', 'Reviewed'], ['dismissed', 'Dismissed'], ['', 'All']]} />
-        {over ? <button className="btn primary" onClick={run} disabled={running}>{running ? <Spinner /> : null} Run detection</button> : null}
+      <PageHead title="Suspicious activity" help="anomalies"
+        sub={over ? 'Batches where the delivery records look wrong, grouped by batch.' : 'Warnings about batches you made.'}>
+        <Seg value={status} onChange={setStatus} options={[['open', 'Needs review'], ['reviewed', 'Reviewed'], ['dismissed', 'Dismissed'], ['', 'All']]} />
+        {over ? <button className="btn primary" onClick={run} disabled={running}>{running ? <Spinner /> : null} Run the checks now</button> : null}
       </PageHead>
       {lastRun ? (
         <div className="note">
-          Last run: <b>{lastRun.findings}</b> finding(s) in {lastRun.duration_ms} ms ·{' '}
-          {Object.entries(lastRun.detector_ms).map(([k, v]) => `${fmt.type(k)} ${v} ms`).join(' · ')} · fan-out threshold {lastRun.fanout.threshold.toFixed(2)}
-          {' '}(baseline {lastRun.fanout.baseline_per_sender_day.toFixed(2)}/sender/day; next-highest sender reached {lastRun.fanout.next_highest_sender_fanout}).
+          Checked all delivery records in {(lastRun.duration_ms / 1000).toFixed(1)} s and found <b>{lastRun.findings}</b> {lastRun.findings === 1 ? 'problem' : 'problems'}
+          {lastRun.new_findings ? <> (<b>{lastRun.new_findings} new</b>)</> : ' (nothing new)'}.
         </div>
       ) : null}
-      <Async state={list} empty={(d) => !d.items.length}>
+      {list.data && groups.length ? (
+        <div className="small muted">{groups.length} {groups.length === 1 ? 'batch' : 'batches'} with findings. Each finding is a warning to investigate, not proof of wrongdoing.</div>
+      ) : null}
+      <Async state={list}>
         {() => groups.map((g) => (
           <div key={g.batch_id} className="card anom-group">
             <div className="card-head">
               <div>
-                <div className="row"><h2 className="mono">{g.batch_id}</h2><span className="muted">{g.product_name}</span></div>
-                <div className="row small" style={{ marginTop: 4 }}>
-                  {[...new Set(g.items.map((i) => i.type))].map((t) => <Badge key={t} kind="bad">{fmt.type(t)} ×{g.items.filter((i) => i.type === t).length}</Badge>)}
-                  {g.manufacturer_id ? <span className="muted">registered by <span className="mono">{g.manufacturer_id}</span></span> : null}
-                </div>
+                <div className="row"><h2>{g.product_name}</h2><span className="id-code" style={{ fontSize: 13 }}>{g.batch_id}</span></div>
+                <div className="small muted" style={{ marginTop: 2 }}>{g.items.length} {g.items.length === 1 ? 'finding' : 'findings'} on this batch</div>
               </div>
-              {over || user.entity_id === g.manufacturer_id ? <button className="btn sm" onClick={() => navigate('trace', { batch: g.batch_id })}>View trace graph</button> : null}
+              <button className="btn sm" onClick={() => navigate('map', { batch: g.batch_id })}>See it on the network map →</button>
             </div>
-            {g.items.map((a) => (
-              <div key={a._id} className={`anom-item ${a.status !== 'open' ? 'dimmed' : ''}`}>
-                <div>
-                  <div className="row"><StatusBadge status={a.severity} /><b>{fmt.type(a.type)}</b><span className="mono small muted">{a.discriminator}</span><StatusBadge status={a.status} /></div>
-                  <div style={{ marginTop: 4 }}>{a.summary}</div>
-                  <div className="small muted">{TYPE_INFO[a.type]} First detected {fmt.dateTime(a.detected_at)}.{a.reviewed_by ? ` ${a.status} by ${a.reviewed_by}.` : ''}</div>
-                  <Evidence a={a} />
-                </div>
-                {over ? (
-                  <div className="row" style={{ alignSelf: 'start' }}>
-                    {a.status !== 'reviewed' ? <button className="btn sm" onClick={() => review(a, 'reviewed')}>Mark reviewed</button> : null}
-                    {a.status !== 'dismissed' ? <button className="btn sm" onClick={() => review(a, 'dismissed')}>Dismiss</button> : null}
-                    {a.status !== 'open' ? <button className="btn sm" onClick={() => review(a, 'open')}>Reopen</button> : null}
+            {g.items.map((a) => {
+              const t = CHECK_TEXT[a.type];
+              return (
+                <div key={a._id} className={`anom-item ${a.status !== 'open' ? 'dimmed' : ''}`}>
+                  <div>
+                    <div className="row"><StatusBadge status={a.severity} /><b style={{ fontSize: 15.5 }}>{t.title}</b>{a.status !== 'open' ? <StatusBadge status={a.status} /> : null}</div>
+                    <div style={{ marginTop: 4 }}>{a.summary}.</div>
+                    <div className="small muted" style={{ marginTop: 2 }}><b>Why it matters:</b> {t.why}</div>
+                    {a.reviewed_by ? <div className="small muted">{statusText(a.status)} by {a.reviewed_by} on {fmt.date(a.reviewed_at)}.</div> : null}
+                    <Evidence a={a} />
                   </div>
-                ) : null}
-              </div>
-            ))}
+                  {over ? (
+                    <div className="row" style={{ alignSelf: 'start' }}>
+                      {a.status !== 'reviewed' ? <button className="btn sm" onClick={() => review(a, 'reviewed')} title="You looked into it">Mark reviewed</button> : null}
+                      {a.status !== 'dismissed' ? <button className="btn sm" onClick={() => review(a, 'dismissed')} title="You checked and it is fine">Not a problem</button> : null}
+                      {a.status !== 'open' ? <button className="btn sm" onClick={() => review(a, 'open')}>Reopen</button> : null}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
         ))}
       </Async>
-      {list.data && !list.data.items.length ? <div className="card"><Empty>No {status || ''} findings.{over && status === 'open' ? ' Run detection to scan the graph.' : ''}</Empty></div> : null}
+      {list.data && !list.data.items.length ? (
+        <div className="card"><Empty>✓ Nothing {status === 'open' ? 'needs review' : `marked ${statusText(status).toLowerCase()}`}.{over && status === 'open' ? ' Press "Run the checks now" to scan again.' : ''}</Empty></div>
+      ) : null}
     </div>
   );
 }

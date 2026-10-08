@@ -11,18 +11,53 @@ const STATUS_KIND = {
   high: 'bad', medium: 'warn', low: 'info',
 };
 function StatusBadge({ status }) {
-  return <Badge kind={STATUS_KIND[status] || ''}>{fmt.type(status)}</Badge>;
+  return <Badge kind={STATUS_KIND[status] || ''}>{statusText(status)}</Badge>;
 }
 
 const TIER_KIND = { manufacturer: 'brand', distributor: 'info', wholesaler: '', pharmacy: 'warn' };
+function TierBadge({ type }) {
+  const t = tierOf(type);
+  return t ? <Badge kind={TIER_KIND[t]}>{TIER_TEXT[t].name}</Badge> : null;
+}
+
+/** A company: name first (what people recognise), ID code small underneath. */
 function EntityTag({ id, name, type }) {
   return (
-    <span title={name || id}>
-      <span className="mono">{id}</span>
-      {name ? <span className="muted small"> · {name}</span> : null}
-      {type ? <> <Badge kind={TIER_KIND[type] || ''}>{type}</Badge></> : null}
+    <span className="entity-tag">
+      <span className="row" style={{ gap: 6 }}>
+        <span style={{ fontWeight: 500 }}>{name || id}</span>
+        {type ? <TierBadge type={type} /> : null}
+      </span>
+      {name ? <span className="id-code">{id}</span> : null}
     </span>
   );
+}
+
+/** "What is this page?" box. Can be hidden; remembered per page in this browser. */
+function PageHelp({ page }) {
+  const help = PAGE_HELP[page];
+  const key = `ss_help_hidden_${page}`;
+  const [hidden, setHidden] = useState(() => { try { return localStorage.getItem(key) === '1'; } catch (e) { return false; } });
+  if (!help) return null;
+  const set = (v) => { setHidden(v); try { localStorage.setItem(key, v ? '1' : '0'); } catch (e) { /* ignore */ } };
+  if (hidden) {
+    return <button className="btn ghost sm help-show" onClick={() => set(false)}>ⓘ What is this page?</button>;
+  }
+  return (
+    <div className="help-box" role="note">
+      <div className="help-icon" aria-hidden="true">i</div>
+      <div style={{ flex: 1 }}>
+        <div className="help-title">{help.title}</div>
+        <div>{help.body}</div>
+      </div>
+      <button className="btn ghost sm" onClick={() => set(true)} aria-label="Hide this explanation">Hide</button>
+    </div>
+  );
+}
+
+/** Small grey technical name, for people who want the term used in the report. */
+function Tech({ children }) {
+  return <span className="tech" title="Technical term">{children}</span>;
 }
 
 function Spinner() { return <span className="spinner" aria-label="Loading" />; }
@@ -43,11 +78,14 @@ function Async({ state, empty, children }) {
   return out;
 }
 
-function PageHead({ title, sub, children }) {
+function PageHead({ title, sub, help, children }) {
   return (
-    <div className="page-head">
-      <div><h1>{title}</h1>{sub ? <p>{sub}</p> : null}</div>
-      {children ? <div className="row">{children}</div> : null}
+    <div className="stack" style={{ gap: 12 }}>
+      <div className="page-head" style={{ marginBottom: 0 }}>
+        <div><h1>{title}</h1>{sub ? <p>{sub}</p> : null}</div>
+        {children ? <div className="row">{children}</div> : null}
+      </div>
+      {help ? <PageHelp page={help} /> : null}
     </div>
   );
 }
@@ -73,22 +111,24 @@ function Progress({ segments, total }) {
   );
 }
 
+const recallSegments = (b) => [
+  { label: 'returned', value: b.returned, color: 'var(--ok)' },
+  { label: 'set aside', value: b.quarantined, color: 'var(--warn)' },
+  { label: 'seen', value: b.acknowledged, color: 'var(--info)' },
+  { label: 'not yet responded', value: b.notified, color: 'var(--bad)' },
+];
+
 function RecallProgress({ progress }) {
   const b = progress.by_status;
   return (
     <div>
-      <Progress total={progress.total} segments={[
-        { label: 'returned', value: b.returned, color: 'var(--ok)' },
-        { label: 'quarantined', value: b.quarantined, color: 'var(--warn)' },
-        { label: 'acknowledged', value: b.acknowledged, color: 'var(--info)' },
-        { label: 'notified', value: b.notified, color: 'var(--bad)' },
-      ]} />
+      <Progress total={progress.total} segments={recallSegments(b)} />
       <div className="row small muted" style={{ marginTop: 6, gap: 14 }}>
         <span><b style={{ color: 'var(--ok)' }}>{b.returned}</b> returned</span>
-        <span><b style={{ color: 'var(--warn)' }}>{b.quarantined}</b> quarantined</span>
-        <span><b style={{ color: 'var(--info)' }}>{b.acknowledged}</b> acknowledged</span>
+        <span><b style={{ color: 'var(--warn)' }}>{b.quarantined}</b> set aside</span>
+        <span><b style={{ color: 'var(--info)' }}>{b.acknowledged}</b> seen</span>
         <span><b style={{ color: 'var(--bad)' }}>{b.notified}</b> not yet responded</span>
-        <span className="right">{progress.returned_pct}% returned</span>
+        <span className="right"><b>{b.returned} of {progress.total}</b> companies have returned their stock</span>
       </div>
     </div>
   );
@@ -146,5 +186,6 @@ function useEntities(type) {
 }
 
 Object.assign(window, {
+  TierBadge, PageHelp, Tech, recallSegments,
   Badge, StatusBadge, EntityTag, Spinner, Loading, Empty, ErrorBox, Async, PageHead, Stat, Progress, RecallProgress, Modal, Pager, Seg, useEntities,
 });

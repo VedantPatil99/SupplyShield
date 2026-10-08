@@ -151,6 +151,30 @@ async function backwardTrace(batchId, entityId) {
   };
 }
 
+/**
+ * The part of a batch's movement one company is entitled to see: every shipment on the way to it
+ * (where its stock came from) and every shipment onward from it (where it sent stock). Not its competitors' deliveries.
+ */
+function neighbourhood(edges, entityId) {
+  const keep = new Set();
+  // Breadth-first walk: from `start`, follow edges whose `near` end is the current company to their `far` end.
+  const walk = (start, near, far) => {
+    const seen = new Set([start]);
+    const queue = [start];
+    while (queue.length) {
+      const cur = queue.shift();
+      for (const e of edges) {
+        if (near(e) !== cur) continue;
+        keep.add(e.shipment_id);
+        if (!seen.has(far(e))) { seen.add(far(e)); queue.push(far(e)); }
+      }
+    }
+  };
+  walk(entityId, (e) => e.to.entity_id, (e) => e.from.entity_id); // upstream
+  walk(entityId, (e) => e.from.entity_id, (e) => e.to.entity_id); // downstream
+  return edges.filter((e) => keep.has(e.shipment_id));
+}
+
 /** Distinct downstream recipients of a set of batches (recall impact, before the Recall node exists). */
 async function recipientsOfBatches(batchIds) {
   return neo.read(
@@ -174,4 +198,4 @@ async function recallImpact(recallId) {
   );
 }
 
-module.exports = { forwardTrace, backwardTrace, recipientsOfBatches, recallImpact, batchGraph, MAX_HOPS };
+module.exports = { forwardTrace, backwardTrace, recipientsOfBatches, recallImpact, batchGraph, neighbourhood, MAX_HOPS };
