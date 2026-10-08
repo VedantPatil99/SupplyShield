@@ -1,0 +1,1082 @@
+[
+  {
+    "entity_id": "MFG-IN-00001",
+    "name": "Aarav Life Sciences",
+    "entity_type": "manufacturer",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-MAN-100000"
+  },
+  {
+    "entity_id": "MFG-IN-00002",
+    "name": "Sunrise Pharmaceuticals",
+    "entity_type": "manufacturer",
+    "city": "Hyderabad",
+    "country": "IN",
+    "license_number": "LIC-MAN-100001"
+  },
+  {
+    "entity_id": "MFG-IN-00003",
+    "name": "Meridian Biotech",
+    "entity_type": "manufacturer",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-MAN-100002"
+  },
+  {
+    "entity_id": "MFG-IN-00004",
+    "name": "Vertex Formulations",
+    "entity_type": "manufacturer",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-MAN-100003"
+  },
+  {
+    "entity_id": "MFG-IN-00005",
+    "name": "Crescent Pharma",
+    "entity_type": "manufacturer",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-MAN-100004"
+  },
+  {
+    "entity_id": "MFG-IN-00006",
+    "name": "Nova Therapeutics",
+    "entity_type": "manufacturer",
+    "city": "Delhi",
+    "country": "IN",
+    "license_number": "LIC-MAN-100005"
+  },
+  {
+    "entity_id": "MFG-IN-00007",
+    "name": "Silverline Drugs",
+    "entity_type": "manufacturer",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-MAN-100006"
+  },
+  {
+    "entity_id": "MFG-IN-00008",
+    "name": "Pinnacle Biosciences",
+    "entity_type": "manufacturer",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-MAN-100007"
+  },
+  {
+    "entity_id": "MFG-IN-00009",
+    "name": "Everest Pharmaceuticals",
+    "entity_type": "manufacturer",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-MAN-100008"
+  },
+  {
+    "entity_id": "MFG-IN-00010",
+    "name": "Solaris Life Sciences",
+    "entity_type": "manufacturer",
+    "city": "Patna",
+    "country": "IN",
+    "license_number": "LIC-MAN-100009"
+  },
+  {
+    "entity_id": "MFG-IN-00011",
+    "name": "Zenith Formulations",
+    "entity_type": "manufacturer",
+    "city": "Indore",
+    "country": "IN",
+    "license_number": "LIC-MAN-100010"
+  },
+  {
+    "entity_id": "MFG-IN-00012",
+    "name": "Trident Pharma",
+    "entity_type": "manufacturer",
+    "city": "Chennai",
+    "country": "IN",
+    "license_number": "LIC-MAN-100011"
+  },
+  {
+    "entity_id": "MFG-IN-00013",
+    "name": "Orbit Biosciences",
+    "entity_type": "manufacturer",
+    "city": "Hyderabad",
+    "country": "IN",
+    "license_number": "LIC-MAN-100012"
+  },
+  {
+    "entity_id": "MFG-IN-00014",
+    "name": "Cascade Therapeutics",
+    "entity_type": "manufacturer",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-MAN-100013"
+  },
+  {
+    "entity_id": "MFG-IN-00015",
+    "name": "Meadow Pharma",
+    "entity_type": "manufacturer",
+    "city": "Kolkata",
+    "country": "IN",
+    "license_number": "LIC-MAN-100014"
+  },
+  {
+    "entity_id": "DIST-IN-00001",
+    "name": "National Drug Distributors",
+    "entity_type": "distributor",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-DIS-100000"
+  },
+  {
+    "entity_id": "DIST-IN-00002",
+    "name": "MedLine Distribution",
+    "entity_type": "distributor",
+    "city": "Kochi",
+    "country": "IN",
+    "license_number": "LIC-DIS-100001"
+  },
+  {
+    "entity_id": "DIST-IN-00003",
+    "name": "PharmaLink Distributors",
+    "entity_type": "distributor",
+    "city": "Chandigarh",
+    "country": "IN",
+    "license_number": "LIC-DIS-100002"
+  },
+  {
+    "entity_id": "DIST-IN-00004",
+    "name": "CarePath Distribution",
+    "entity_type": "distributor",
+    "city": "Hyderabad",
+    "country": "IN",
+    "license_number": "LIC-DIS-100003"
+  },
+  {
+    "entity_id": "DIST-IN-00005",
+    "name": "Unity Pharma Distribution",
+    "entity_type": "distributor",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-DIS-100004"
+  },
+  {
+    "entity_id": "DIST-IN-00006",
+    "name": "Continental Drug Distributors",
+    "entity_type": "distributor",
+    "city": "Kolkata",
+    "country": "IN",
+    "license_number": "LIC-DIS-100005"
+  },
+  {
+    "entity_id": "DIST-IN-00007",
+    "name": "Sterling Pharma Logistics",
+    "entity_type": "distributor",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-DIS-100006"
+  },
+  {
+    "entity_id": "DIST-IN-00008",
+    "name": "Horizon Distribution Network",
+    "entity_type": "distributor",
+    "city": "Indore",
+    "country": "IN",
+    "license_number": "LIC-DIS-100007"
+  },
+  {
+    "entity_id": "DIST-IN-00009",
+    "name": "Metro Drug Distributors",
+    "entity_type": "distributor",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-DIS-100008"
+  },
+  {
+    "entity_id": "DIST-IN-00010",
+    "name": "Prime Pharma Supply",
+    "entity_type": "distributor",
+    "city": "Bhopal",
+    "country": "IN",
+    "license_number": "LIC-DIS-100009"
+  },
+  {
+    "entity_id": "DIST-IN-00011",
+    "name": "Anchor Distribution Co.",
+    "entity_type": "distributor",
+    "city": "Patna",
+    "country": "IN",
+    "license_number": "LIC-DIS-100010"
+  },
+  {
+    "entity_id": "DIST-IN-00012",
+    "name": "Beacon Pharma Distributors",
+    "entity_type": "distributor",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-DIS-100011"
+  },
+  {
+    "entity_id": "DIST-IN-00013",
+    "name": "Frontier Drug Distribution",
+    "entity_type": "distributor",
+    "city": "Hyderabad",
+    "country": "IN",
+    "license_number": "LIC-DIS-100012"
+  },
+  {
+    "entity_id": "DIST-IN-00014",
+    "name": "Summit Pharma Logistics",
+    "entity_type": "distributor",
+    "city": "Pune",
+    "country": "IN",
+    "license_number": "LIC-DIS-100013"
+  },
+  {
+    "entity_id": "DIST-IN-00015",
+    "name": "Coastal Distributors",
+    "entity_type": "distributor",
+    "city": "Indore",
+    "country": "IN",
+    "license_number": "LIC-DIS-100014"
+  },
+  {
+    "entity_id": "DIST-IN-00016",
+    "name": "Redwood Drug Distribution",
+    "entity_type": "distributor",
+    "city": "Coimbatore",
+    "country": "IN",
+    "license_number": "LIC-DIS-100015"
+  },
+  {
+    "entity_id": "DIST-IN-00017",
+    "name": "Vantage Pharma Distributors",
+    "entity_type": "distributor",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-DIS-100016"
+  },
+  {
+    "entity_id": "DIST-IN-00018",
+    "name": "Keystone Distribution",
+    "entity_type": "distributor",
+    "city": "Delhi",
+    "country": "IN",
+    "license_number": "LIC-DIS-100017"
+  },
+  {
+    "entity_id": "DIST-IN-00019",
+    "name": "Ridgeline Pharma Supply",
+    "entity_type": "distributor",
+    "city": "Kolkata",
+    "country": "IN",
+    "license_number": "LIC-DIS-100018"
+  },
+  {
+    "entity_id": "DIST-IN-00020",
+    "name": "Elevate Distributors",
+    "entity_type": "distributor",
+    "city": "Coimbatore",
+    "country": "IN",
+    "license_number": "LIC-DIS-100019"
+  },
+  {
+    "entity_id": "DIST-IN-00021",
+    "name": "Northstar Drug Distribution",
+    "entity_type": "distributor",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-DIS-100020"
+  },
+  {
+    "entity_id": "DIST-IN-00022",
+    "name": "Bluewave Pharma Distributors",
+    "entity_type": "distributor",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-DIS-100021"
+  },
+  {
+    "entity_id": "DIST-IN-00023",
+    "name": "Ironclad Distribution Co.",
+    "entity_type": "distributor",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-DIS-100022"
+  },
+  {
+    "entity_id": "DIST-IN-00024",
+    "name": "Highland Drug Distributors",
+    "entity_type": "distributor",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-DIS-100023"
+  },
+  {
+    "entity_id": "DIST-IN-00025",
+    "name": "Meridian Distribution Network",
+    "entity_type": "distributor",
+    "city": "Vellore",
+    "country": "IN",
+    "license_number": "LIC-DIS-100024"
+  },
+  {
+    "entity_id": "WHS-IN-00001",
+    "name": "City Wholesale Pharma",
+    "entity_type": "wholesaler",
+    "city": "Vellore",
+    "country": "IN",
+    "license_number": "LIC-WHO-100000"
+  },
+  {
+    "entity_id": "WHS-IN-00002",
+    "name": "Regional Drug Wholesalers",
+    "entity_type": "wholesaler",
+    "city": "Chandigarh",
+    "country": "IN",
+    "license_number": "LIC-WHO-100001"
+  },
+  {
+    "entity_id": "WHS-IN-00003",
+    "name": "Union Pharma Wholesale",
+    "entity_type": "wholesaler",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-WHO-100002"
+  },
+  {
+    "entity_id": "WHS-IN-00004",
+    "name": "Gateway Wholesale Drugs",
+    "entity_type": "wholesaler",
+    "city": "Chennai",
+    "country": "IN",
+    "license_number": "LIC-WHO-100003"
+  },
+  {
+    "entity_id": "WHS-IN-00005",
+    "name": "Central Pharma Traders",
+    "entity_type": "wholesaler",
+    "city": "Bhopal",
+    "country": "IN",
+    "license_number": "LIC-WHO-100004"
+  },
+  {
+    "entity_id": "WHS-IN-00006",
+    "name": "Everstock Wholesale Pharma",
+    "entity_type": "wholesaler",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-WHO-100005"
+  },
+  {
+    "entity_id": "WHS-IN-00007",
+    "name": "Landmark Drug Wholesalers",
+    "entity_type": "wholesaler",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-WHO-100006"
+  },
+  {
+    "entity_id": "WHS-IN-00008",
+    "name": "Riverside Pharma Wholesale",
+    "entity_type": "wholesaler",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-WHO-100007"
+  },
+  {
+    "entity_id": "WHS-IN-00009",
+    "name": "Capital Drug Traders",
+    "entity_type": "wholesaler",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-WHO-100008"
+  },
+  {
+    "entity_id": "WHS-IN-00010",
+    "name": "Harborview Wholesale Pharma",
+    "entity_type": "wholesaler",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-WHO-100009"
+  },
+  {
+    "entity_id": "WHS-IN-00011",
+    "name": "Greenfield Drug Wholesalers",
+    "entity_type": "wholesaler",
+    "city": "Lucknow",
+    "country": "IN",
+    "license_number": "LIC-WHO-100010"
+  },
+  {
+    "entity_id": "WHS-IN-00012",
+    "name": "Oakridge Pharma Traders",
+    "entity_type": "wholesaler",
+    "city": "Chandigarh",
+    "country": "IN",
+    "license_number": "LIC-WHO-100011"
+  },
+  {
+    "entity_id": "WHS-IN-00013",
+    "name": "Westgate Wholesale Drugs",
+    "entity_type": "wholesaler",
+    "city": "Vellore",
+    "country": "IN",
+    "license_number": "LIC-WHO-100012"
+  },
+  {
+    "entity_id": "WHS-IN-00014",
+    "name": "Eastline Pharma Wholesale",
+    "entity_type": "wholesaler",
+    "city": "Patna",
+    "country": "IN",
+    "license_number": "LIC-WHO-100013"
+  },
+  {
+    "entity_id": "WHS-IN-00015",
+    "name": "Millbrook Drug Traders",
+    "entity_type": "wholesaler",
+    "city": "Kolkata",
+    "country": "IN",
+    "license_number": "LIC-WHO-100014"
+  },
+  {
+    "entity_id": "WHS-IN-00016",
+    "name": "Fairview Wholesale Pharma",
+    "entity_type": "wholesaler",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-WHO-100015"
+  },
+  {
+    "entity_id": "WHS-IN-00017",
+    "name": "Stonebridge Drug Wholesalers",
+    "entity_type": "wholesaler",
+    "city": "Chennai",
+    "country": "IN",
+    "license_number": "LIC-WHO-100016"
+  },
+  {
+    "entity_id": "WHS-IN-00018",
+    "name": "Clearwater Pharma Traders",
+    "entity_type": "wholesaler",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-WHO-100017"
+  },
+  {
+    "entity_id": "WHS-IN-00019",
+    "name": "Brookfield Wholesale Drugs",
+    "entity_type": "wholesaler",
+    "city": "Lucknow",
+    "country": "IN",
+    "license_number": "LIC-WHO-100018"
+  },
+  {
+    "entity_id": "WHS-IN-00020",
+    "name": "Lakeside Pharma Wholesale",
+    "entity_type": "wholesaler",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-WHO-100019"
+  },
+  {
+    "entity_id": "WHS-IN-00021",
+    "name": "Hillcrest Drug Traders",
+    "entity_type": "wholesaler",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-WHO-100020"
+  },
+  {
+    "entity_id": "WHS-IN-00022",
+    "name": "Parkside Wholesale Pharma",
+    "entity_type": "wholesaler",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-WHO-100021"
+  },
+  {
+    "entity_id": "WHS-IN-00023",
+    "name": "Southgate Drug Wholesalers",
+    "entity_type": "wholesaler",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-WHO-100022"
+  },
+  {
+    "entity_id": "WHS-IN-00024",
+    "name": "Northfield Pharma Traders",
+    "entity_type": "wholesaler",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-WHO-100023"
+  },
+  {
+    "entity_id": "WHS-IN-00025",
+    "name": "Wellspring Wholesale Drugs",
+    "entity_type": "wholesaler",
+    "city": "Bhopal",
+    "country": "IN",
+    "license_number": "LIC-WHO-100024"
+  },
+  {
+    "entity_id": "WHS-IN-00026",
+    "name": "Ashford Pharma Wholesale",
+    "entity_type": "wholesaler",
+    "city": "Vellore",
+    "country": "IN",
+    "license_number": "LIC-WHO-100025"
+  },
+  {
+    "entity_id": "WHS-IN-00027",
+    "name": "Kingsley Drug Traders",
+    "entity_type": "wholesaler",
+    "city": "Pune",
+    "country": "IN",
+    "license_number": "LIC-WHO-100026"
+  },
+  {
+    "entity_id": "WHS-IN-00028",
+    "name": "Dunmore Wholesale Pharma",
+    "entity_type": "wholesaler",
+    "city": "Vellore",
+    "country": "IN",
+    "license_number": "LIC-WHO-100027"
+  },
+  {
+    "entity_id": "WHS-IN-00029",
+    "name": "Fernwood Drug Wholesalers",
+    "entity_type": "wholesaler",
+    "city": "Vellore",
+    "country": "IN",
+    "license_number": "LIC-WHO-100028"
+  },
+  {
+    "entity_id": "WHS-IN-00030",
+    "name": "Glenmoor Pharma Traders",
+    "entity_type": "wholesaler",
+    "city": "Kolkata",
+    "country": "IN",
+    "license_number": "LIC-WHO-100029"
+  },
+  {
+    "entity_id": "WHS-IN-00031",
+    "name": "Harrowgate Wholesale Drugs",
+    "entity_type": "wholesaler",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-WHO-100030"
+  },
+  {
+    "entity_id": "WHS-IN-00032",
+    "name": "Ivywood Pharma Wholesale",
+    "entity_type": "wholesaler",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-WHO-100031"
+  },
+  {
+    "entity_id": "WHS-IN-00033",
+    "name": "Juniper Drug Traders",
+    "entity_type": "wholesaler",
+    "city": "Chandigarh",
+    "country": "IN",
+    "license_number": "LIC-WHO-100032"
+  },
+  {
+    "entity_id": "WHS-IN-00034",
+    "name": "Kestrel Wholesale Pharma",
+    "entity_type": "wholesaler",
+    "city": "Pune",
+    "country": "IN",
+    "license_number": "LIC-WHO-100033"
+  },
+  {
+    "entity_id": "WHS-IN-00035",
+    "name": "Larkspur Drug Wholesalers",
+    "entity_type": "wholesaler",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-WHO-100034"
+  },
+  {
+    "entity_id": "PHARM-IN-00001",
+    "name": "HealthPlus Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-PHA-100000"
+  },
+  {
+    "entity_id": "PHARM-IN-00002",
+    "name": "MediCare Chemist",
+    "entity_type": "pharmacy",
+    "city": "Pune",
+    "country": "IN",
+    "license_number": "LIC-PHA-100001"
+  },
+  {
+    "entity_id": "PHARM-IN-00003",
+    "name": "CityCare Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Bhopal",
+    "country": "IN",
+    "license_number": "LIC-PHA-100002"
+  },
+  {
+    "entity_id": "PHARM-IN-00004",
+    "name": "WellLife Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100003"
+  },
+  {
+    "entity_id": "PHARM-IN-00005",
+    "name": "GreenCross Chemist",
+    "entity_type": "pharmacy",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100004"
+  },
+  {
+    "entity_id": "PHARM-IN-00006",
+    "name": "TrustCare Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-PHA-100005"
+  },
+  {
+    "entity_id": "PHARM-IN-00007",
+    "name": "LifeLine Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-PHA-100006"
+  },
+  {
+    "entity_id": "PHARM-IN-00008",
+    "name": "CarePoint Chemist",
+    "entity_type": "pharmacy",
+    "city": "Coimbatore",
+    "country": "IN",
+    "license_number": "LIC-PHA-100007"
+  },
+  {
+    "entity_id": "PHARM-IN-00009",
+    "name": "VitalCare Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Chennai",
+    "country": "IN",
+    "license_number": "LIC-PHA-100008"
+  },
+  {
+    "entity_id": "PHARM-IN-00010",
+    "name": "PrimeHealth Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-PHA-100009"
+  },
+  {
+    "entity_id": "PHARM-IN-00011",
+    "name": "SunCare Chemist",
+    "entity_type": "pharmacy",
+    "city": "Chennai",
+    "country": "IN",
+    "license_number": "LIC-PHA-100010"
+  },
+  {
+    "entity_id": "PHARM-IN-00012",
+    "name": "MedTrust Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Coimbatore",
+    "country": "IN",
+    "license_number": "LIC-PHA-100011"
+  },
+  {
+    "entity_id": "PHARM-IN-00013",
+    "name": "FamilyCare Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100012"
+  },
+  {
+    "entity_id": "PHARM-IN-00014",
+    "name": "QuickCare Chemist",
+    "entity_type": "pharmacy",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100013"
+  },
+  {
+    "entity_id": "PHARM-IN-00015",
+    "name": "HealthFirst Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-PHA-100014"
+  },
+  {
+    "entity_id": "PHARM-IN-00016",
+    "name": "MediPlus Chemist",
+    "entity_type": "pharmacy",
+    "city": "Kolkata",
+    "country": "IN",
+    "license_number": "LIC-PHA-100015"
+  },
+  {
+    "entity_id": "PHARM-IN-00017",
+    "name": "CareWell Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Patna",
+    "country": "IN",
+    "license_number": "LIC-PHA-100016"
+  },
+  {
+    "entity_id": "PHARM-IN-00018",
+    "name": "TrueCare Chemist",
+    "entity_type": "pharmacy",
+    "city": "Coimbatore",
+    "country": "IN",
+    "license_number": "LIC-PHA-100017"
+  },
+  {
+    "entity_id": "PHARM-IN-00019",
+    "name": "NeighborCare Pharmacy",
+    "entity_type": "pharmacy",
+    "city": "Kolkata",
+    "country": "IN",
+    "license_number": "LIC-PHA-100018"
+  },
+  {
+    "entity_id": "PHARM-IN-00020",
+    "name": "SwiftCare Chemist",
+    "entity_type": "pharmacy",
+    "city": "Surat",
+    "country": "IN",
+    "license_number": "LIC-PHA-100019"
+  },
+  {
+    "entity_id": "PHARM-IN-00021",
+    "name": "HealthPlus Pharmacy (North)",
+    "entity_type": "pharmacy",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100020"
+  },
+  {
+    "entity_id": "PHARM-IN-00022",
+    "name": "MediCare Chemist (South)",
+    "entity_type": "pharmacy",
+    "city": "Bhopal",
+    "country": "IN",
+    "license_number": "LIC-PHA-100021"
+  },
+  {
+    "entity_id": "PHARM-IN-00023",
+    "name": "CityCare Pharmacy (East)",
+    "entity_type": "pharmacy",
+    "city": "Delhi",
+    "country": "IN",
+    "license_number": "LIC-PHA-100022"
+  },
+  {
+    "entity_id": "PHARM-IN-00024",
+    "name": "WellLife Pharmacy (West)",
+    "entity_type": "pharmacy",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100023"
+  },
+  {
+    "entity_id": "PHARM-IN-00025",
+    "name": "GreenCross Chemist (Central)",
+    "entity_type": "pharmacy",
+    "city": "Delhi",
+    "country": "IN",
+    "license_number": "LIC-PHA-100024"
+  },
+  {
+    "entity_id": "PHARM-IN-00026",
+    "name": "TrustCare Pharmacy (North)",
+    "entity_type": "pharmacy",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-PHA-100025"
+  },
+  {
+    "entity_id": "PHARM-IN-00027",
+    "name": "LifeLine Pharmacy (South)",
+    "entity_type": "pharmacy",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-PHA-100026"
+  },
+  {
+    "entity_id": "PHARM-IN-00028",
+    "name": "CarePoint Chemist (East)",
+    "entity_type": "pharmacy",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-PHA-100027"
+  },
+  {
+    "entity_id": "PHARM-IN-00029",
+    "name": "VitalCare Pharmacy (West)",
+    "entity_type": "pharmacy",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100028"
+  },
+  {
+    "entity_id": "PHARM-IN-00030",
+    "name": "PrimeHealth Pharmacy (Central)",
+    "entity_type": "pharmacy",
+    "city": "Patna",
+    "country": "IN",
+    "license_number": "LIC-PHA-100029"
+  },
+  {
+    "entity_id": "PHARM-IN-00031",
+    "name": "SunCare Chemist (North)",
+    "entity_type": "pharmacy",
+    "city": "Indore",
+    "country": "IN",
+    "license_number": "LIC-PHA-100030"
+  },
+  {
+    "entity_id": "PHARM-IN-00032",
+    "name": "MedTrust Pharmacy (South)",
+    "entity_type": "pharmacy",
+    "city": "Patna",
+    "country": "IN",
+    "license_number": "LIC-PHA-100031"
+  },
+  {
+    "entity_id": "PHARM-IN-00033",
+    "name": "FamilyCare Pharmacy (East)",
+    "entity_type": "pharmacy",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100032"
+  },
+  {
+    "entity_id": "PHARM-IN-00034",
+    "name": "QuickCare Chemist (West)",
+    "entity_type": "pharmacy",
+    "city": "Vellore",
+    "country": "IN",
+    "license_number": "LIC-PHA-100033"
+  },
+  {
+    "entity_id": "PHARM-IN-00035",
+    "name": "HealthFirst Pharmacy (Central)",
+    "entity_type": "pharmacy",
+    "city": "Ahmedabad",
+    "country": "IN",
+    "license_number": "LIC-PHA-100034"
+  },
+  {
+    "entity_id": "PHARM-IN-00036",
+    "name": "MediPlus Chemist (North)",
+    "entity_type": "pharmacy",
+    "city": "Delhi",
+    "country": "IN",
+    "license_number": "LIC-PHA-100035"
+  },
+  {
+    "entity_id": "PHARM-IN-00037",
+    "name": "CareWell Pharmacy (South)",
+    "entity_type": "pharmacy",
+    "city": "Kochi",
+    "country": "IN",
+    "license_number": "LIC-PHA-100036"
+  },
+  {
+    "entity_id": "PHARM-IN-00038",
+    "name": "TrueCare Chemist (East)",
+    "entity_type": "pharmacy",
+    "city": "Surat",
+    "country": "IN",
+    "license_number": "LIC-PHA-100037"
+  },
+  {
+    "entity_id": "PHARM-IN-00039",
+    "name": "NeighborCare Pharmacy (West)",
+    "entity_type": "pharmacy",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-PHA-100038"
+  },
+  {
+    "entity_id": "PHARM-IN-00040",
+    "name": "SwiftCare Chemist (Central)",
+    "entity_type": "pharmacy",
+    "city": "Chennai",
+    "country": "IN",
+    "license_number": "LIC-PHA-100039"
+  },
+  {
+    "entity_id": "PHARM-IN-00041",
+    "name": "HealthPlus Pharmacy (North)",
+    "entity_type": "pharmacy",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-PHA-100040"
+  },
+  {
+    "entity_id": "PHARM-IN-00042",
+    "name": "MediCare Chemist (South)",
+    "entity_type": "pharmacy",
+    "city": "Delhi",
+    "country": "IN",
+    "license_number": "LIC-PHA-100041"
+  },
+  {
+    "entity_id": "PHARM-IN-00043",
+    "name": "CityCare Pharmacy (East)",
+    "entity_type": "pharmacy",
+    "city": "Pune",
+    "country": "IN",
+    "license_number": "LIC-PHA-100042"
+  },
+  {
+    "entity_id": "PHARM-IN-00044",
+    "name": "WellLife Pharmacy (West)",
+    "entity_type": "pharmacy",
+    "city": "Indore",
+    "country": "IN",
+    "license_number": "LIC-PHA-100043"
+  },
+  {
+    "entity_id": "PHARM-IN-00045",
+    "name": "GreenCross Chemist (Central)",
+    "entity_type": "pharmacy",
+    "city": "Chandigarh",
+    "country": "IN",
+    "license_number": "LIC-PHA-100044"
+  },
+  {
+    "entity_id": "PHARM-IN-00046",
+    "name": "TrustCare Pharmacy (North)",
+    "entity_type": "pharmacy",
+    "city": "Bengaluru",
+    "country": "IN",
+    "license_number": "LIC-PHA-100045"
+  },
+  {
+    "entity_id": "PHARM-IN-00047",
+    "name": "LifeLine Pharmacy (South)",
+    "entity_type": "pharmacy",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100046"
+  },
+  {
+    "entity_id": "PHARM-IN-00048",
+    "name": "CarePoint Chemist (East)",
+    "entity_type": "pharmacy",
+    "city": "Nagpur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100047"
+  },
+  {
+    "entity_id": "PHARM-IN-00049",
+    "name": "VitalCare Pharmacy (West)",
+    "entity_type": "pharmacy",
+    "city": "Chandigarh",
+    "country": "IN",
+    "license_number": "LIC-PHA-100048"
+  },
+  {
+    "entity_id": "PHARM-IN-00050",
+    "name": "PrimeHealth Pharmacy (Central)",
+    "entity_type": "pharmacy",
+    "city": "Bhopal",
+    "country": "IN",
+    "license_number": "LIC-PHA-100049"
+  },
+  {
+    "entity_id": "PHARM-IN-00051",
+    "name": "SunCare Chemist (North)",
+    "entity_type": "pharmacy",
+    "city": "Kochi",
+    "country": "IN",
+    "license_number": "LIC-PHA-100050"
+  },
+  {
+    "entity_id": "PHARM-IN-00052",
+    "name": "MedTrust Pharmacy (South)",
+    "entity_type": "pharmacy",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100051"
+  },
+  {
+    "entity_id": "PHARM-IN-00053",
+    "name": "FamilyCare Pharmacy (East)",
+    "entity_type": "pharmacy",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-PHA-100052"
+  },
+  {
+    "entity_id": "PHARM-IN-00054",
+    "name": "QuickCare Chemist (West)",
+    "entity_type": "pharmacy",
+    "city": "Hyderabad",
+    "country": "IN",
+    "license_number": "LIC-PHA-100053"
+  },
+  {
+    "entity_id": "PHARM-IN-00055",
+    "name": "HealthFirst Pharmacy (Central)",
+    "entity_type": "pharmacy",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-PHA-100054"
+  },
+  {
+    "entity_id": "PHARM-IN-00056",
+    "name": "MediPlus Chemist (North)",
+    "entity_type": "pharmacy",
+    "city": "Visakhapatnam",
+    "country": "IN",
+    "license_number": "LIC-PHA-100055"
+  },
+  {
+    "entity_id": "PHARM-IN-00057",
+    "name": "CareWell Pharmacy (South)",
+    "entity_type": "pharmacy",
+    "city": "Jaipur",
+    "country": "IN",
+    "license_number": "LIC-PHA-100056"
+  },
+  {
+    "entity_id": "PHARM-IN-00058",
+    "name": "TrueCare Chemist (East)",
+    "entity_type": "pharmacy",
+    "city": "Coimbatore",
+    "country": "IN",
+    "license_number": "LIC-PHA-100057"
+  },
+  {
+    "entity_id": "PHARM-IN-00059",
+    "name": "NeighborCare Pharmacy (West)",
+    "entity_type": "pharmacy",
+    "city": "Mumbai",
+    "country": "IN",
+    "license_number": "LIC-PHA-100058"
+  },
+  {
+    "entity_id": "PHARM-IN-00060",
+    "name": "SwiftCare Chemist (Central)",
+    "entity_type": "pharmacy",
+    "city": "Lucknow",
+    "country": "IN",
+    "license_number": "LIC-PHA-100059"
+  }
+]

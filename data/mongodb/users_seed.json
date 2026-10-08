@@ -1,0 +1,44 @@
+[
+  {
+    "username": "admin",
+    "password": "Admin@123",
+    "role": "admin",
+    "entity_id": null,
+    "display_name": "Platform Administrator"
+  },
+  {
+    "username": "regulator1",
+    "password": "Regulator@123",
+    "role": "regulator",
+    "entity_id": null,
+    "display_name": "CDSCO Regulatory Auditor"
+  },
+  {
+    "username": "mfg_aarav",
+    "password": "Mfg@12345",
+    "role": "manufacturer",
+    "entity_id": "MFG-IN-00001",
+    "display_name": "Aarav Life Sciences"
+  },
+  {
+    "username": "dist_national",
+    "password": "Dist@12345",
+    "role": "distributor",
+    "entity_id": "DIST-IN-00001",
+    "display_name": "National Drug Distributors"
+  },
+  {
+    "username": "whs_city",
+    "password": "Whs@12345",
+    "role": "wholesaler",
+    "entity_id": "WHS-IN-00001",
+    "display_name": "City Wholesale Pharma"
+  },
+  {
+    "username": "pharm_healthplus",
+    "password": "Pharm@12345",
+    "role": "pharmacy",
+    "entity_id": "PHARM-IN-00001",
+    "display_name": "HealthPlus Pharmacy"
+  }
+]

@@ -1,0 +1,470 @@
+[
+  {
+    "_id": "RECALL-2026-D7457A",
+    "batch_ids": [
+      "BATCH-2026-00A6CD"
+    ],
+    "initiated_by": "MFG-IN-00004",
+    "reason": "Sub-potent active ingredient identified in stability testing",
+    "recall_class": "Class II",
+    "affected_entities": [
+      {
+        "entity_id": "PHARM-IN-00038",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "acknowledged",
+        "updated_at": "2026-03-28T07:05:04Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00042",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "notified",
+        "updated_at": "2026-04-01T07:05:04Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00008",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "returned",
+        "updated_at": "2026-03-28T07:05:04Z"
+      },
+      {
+        "entity_id": "WHS-IN-00023",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "returned",
+        "updated_at": "2026-04-04T07:05:04Z"
+      },
+      {
+        "entity_id": "DIST-IN-00013",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "returned",
+        "updated_at": "2026-04-02T07:05:04Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00022",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "acknowledged",
+        "updated_at": "2026-04-04T07:05:04Z"
+      },
+      {
+        "entity_id": "DIST-IN-00005",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "returned",
+        "updated_at": "2026-04-05T07:05:04Z"
+      },
+      {
+        "entity_id": "WHS-IN-00030",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "quarantined",
+        "updated_at": "2026-04-05T07:05:04Z"
+      }
+    ],
+    "status": "in_progress",
+    "initiated_at": "2026-03-28T07:05:04Z",
+    "updated_at": "2026-04-07T07:05:04Z"
+  },
+  {
+    "_id": "RECALL-2026-19D32C",
+    "batch_ids": [
+      "BATCH-2026-19BD0B"
+    ],
+    "initiated_by": "MFG-IN-00009",
+    "reason": "Foreign particulate matter found in a subset of units",
+    "recall_class": "Class III",
+    "affected_entities": [
+      {
+        "entity_id": "WHS-IN-00029",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "quarantined",
+        "updated_at": "2026-03-18T05:54:52Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00016",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "notified",
+        "updated_at": "2026-03-27T05:54:52Z"
+      },
+      {
+        "entity_id": "DIST-IN-00005",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "acknowledged",
+        "updated_at": "2026-03-17T05:54:52Z"
+      }
+    ],
+    "status": "completed",
+    "initiated_at": "2026-03-17T05:54:52Z",
+    "updated_at": "2026-03-26T05:54:52Z"
+  },
+  {
+    "_id": "RECALL-2026-2CBAC5",
+    "batch_ids": [
+      "BATCH-2026-6A4ED4"
+    ],
+    "initiated_by": "MFG-IN-00008",
+    "reason": "Packaging defect risking loss of sterility",
+    "recall_class": "Class II",
+    "affected_entities": [
+      {
+        "entity_id": "DIST-IN-00014",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "quarantined",
+        "updated_at": "2026-03-14T06:37:50Z"
+      },
+      {
+        "entity_id": "WHS-IN-00025",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "acknowledged",
+        "updated_at": "2026-03-12T06:37:50Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00059",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "returned",
+        "updated_at": "2026-03-17T06:37:50Z"
+      }
+    ],
+    "status": "in_progress",
+    "initiated_at": "2026-03-10T06:37:50Z",
+    "updated_at": "2026-03-22T06:37:50Z"
+  },
+  {
+    "_id": "RECALL-2026-40FDC2",
+    "batch_ids": [
+      "BATCH-2026-8537E8"
+    ],
+    "initiated_by": "MFG-IN-00010",
+    "reason": "Packaging defect risking loss of sterility",
+    "recall_class": "Class III",
+    "affected_entities": [
+      {
+        "entity_id": "PHARM-IN-00012",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "quarantined",
+        "updated_at": "2026-04-10T18:15:52Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00027",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "returned",
+        "updated_at": "2026-04-07T18:15:52Z"
+      },
+      {
+        "entity_id": "DIST-IN-00025",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "returned",
+        "updated_at": "2026-04-10T18:15:52Z"
+      },
+      {
+        "entity_id": "WHS-IN-00029",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "returned",
+        "updated_at": "2026-04-11T18:15:52Z"
+      }
+    ],
+    "status": "completed",
+    "initiated_at": "2026-04-01T18:15:52Z",
+    "updated_at": "2026-04-13T18:15:52Z"
+  },
+  {
+    "_id": "RECALL-2025-528C05",
+    "batch_ids": [
+      "BATCH-2025-4E1A0F"
+    ],
+    "initiated_by": "MFG-IN-00008",
+    "reason": "Deviation from Good Manufacturing Practice (GMP) identified at plant",
+    "recall_class": "Class II",
+    "affected_entities": [
+      {
+        "entity_id": "DIST-IN-00002",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "quarantined",
+        "updated_at": "2025-12-27T07:49:34Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00016",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "quarantined",
+        "updated_at": "2025-12-24T07:49:34Z"
+      },
+      {
+        "entity_id": "WHS-IN-00009",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "notified",
+        "updated_at": "2025-12-25T07:49:34Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00038",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "acknowledged",
+        "updated_at": "2025-12-25T07:49:34Z"
+      }
+    ],
+    "status": "in_progress",
+    "initiated_at": "2025-12-17T07:49:34Z",
+    "updated_at": "2025-12-26T07:49:34Z"
+  },
+  {
+    "_id": "RECALL-2025-CF3DC5",
+    "batch_ids": [
+      "BATCH-2025-E4DBFD"
+    ],
+    "initiated_by": "MFG-IN-00012",
+    "reason": "Sub-potent active ingredient identified in stability testing",
+    "recall_class": "Class III",
+    "affected_entities": [
+      {
+        "entity_id": "PHARM-IN-00006",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "notified",
+        "updated_at": "2026-01-02T19:44:01Z"
+      },
+      {
+        "entity_id": "WHS-IN-00018",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "notified",
+        "updated_at": "2025-12-24T19:44:01Z"
+      },
+      {
+        "entity_id": "DIST-IN-00017",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "returned",
+        "updated_at": "2025-12-28T19:44:01Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00047",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "quarantined",
+        "updated_at": "2025-12-27T19:44:01Z"
+      }
+    ],
+    "status": "in_progress",
+    "initiated_at": "2025-12-24T19:44:01Z",
+    "updated_at": "2026-01-05T19:44:01Z"
+  },
+  {
+    "_id": "RECALL-2026-D56D7D",
+    "batch_ids": [
+      "BATCH-2026-221D57"
+    ],
+    "initiated_by": "MFG-IN-00011",
+    "reason": "Contamination detected in retained sample during routine QC audit",
+    "recall_class": "Class II",
+    "affected_entities": [
+      {
+        "entity_id": "DIST-IN-00020",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "returned",
+        "updated_at": "2026-08-02T22:39:38Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00042",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "returned",
+        "updated_at": "2026-08-04T22:39:38Z"
+      },
+      {
+        "entity_id": "WHS-IN-00020",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "quarantined",
+        "updated_at": "2026-08-06T22:39:38Z"
+      }
+    ],
+    "status": "completed",
+    "initiated_at": "2026-07-29T22:39:38Z",
+    "updated_at": "2026-08-06T22:39:38Z"
+  },
+  {
+    "_id": "RECALL-2026-CF5C77",
+    "batch_ids": [
+      "BATCH-2026-0ECCAE"
+    ],
+    "initiated_by": "MFG-IN-00005",
+    "reason": "Adverse event reports exceeding expected threshold",
+    "recall_class": "Class II",
+    "affected_entities": [
+      {
+        "entity_id": "DIST-IN-00012",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "acknowledged",
+        "updated_at": "2026-03-28T00:25:00Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00032",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "notified",
+        "updated_at": "2026-03-24T00:25:00Z"
+      },
+      {
+        "entity_id": "WHS-IN-00009",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "returned",
+        "updated_at": "2026-03-18T00:25:00Z"
+      }
+    ],
+    "status": "completed",
+    "initiated_at": "2026-03-18T00:25:00Z",
+    "updated_at": "2026-03-22T00:25:00Z"
+  },
+  {
+    "_id": "RECALL-2025-298BB2",
+    "batch_ids": [
+      "BATCH-2025-94ACCB"
+    ],
+    "initiated_by": "MFG-IN-00010",
+    "reason": "Deviation from Good Manufacturing Practice (GMP) identified at plant",
+    "recall_class": "Class I",
+    "affected_entities": [
+      {
+        "entity_id": "DIST-IN-00004",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "returned",
+        "updated_at": "2025-12-18T18:57:36Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00039",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "quarantined",
+        "updated_at": "2025-12-18T18:57:36Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00032",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "acknowledged",
+        "updated_at": "2025-12-25T18:57:36Z"
+      },
+      {
+        "entity_id": "WHS-IN-00028",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "quarantined",
+        "updated_at": "2025-12-20T18:57:36Z"
+      },
+      {
+        "entity_id": "DIST-IN-00001",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "quarantined",
+        "updated_at": "2025-12-23T18:57:36Z"
+      },
+      {
+        "entity_id": "WHS-IN-00014",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "notified",
+        "updated_at": "2025-12-23T18:57:36Z"
+      }
+    ],
+    "status": "completed",
+    "initiated_at": "2025-12-15T18:57:36Z",
+    "updated_at": "2025-12-19T18:57:36Z"
+  },
+  {
+    "_id": "RECALL-2026-0F138B",
+    "batch_ids": [
+      "BATCH-2026-AA3E6D"
+    ],
+    "initiated_by": "MFG-IN-00007",
+    "reason": "Adverse event reports exceeding expected threshold",
+    "recall_class": "Class II",
+    "affected_entities": [
+      {
+        "entity_id": "DIST-IN-00024",
+        "entity_type": [
+          "Distributor"
+        ],
+        "status": "notified",
+        "updated_at": "2026-04-07T17:07:40Z"
+      },
+      {
+        "entity_id": "WHS-IN-00031",
+        "entity_type": [
+          "Wholesaler"
+        ],
+        "status": "returned",
+        "updated_at": "2026-04-12T17:07:40Z"
+      },
+      {
+        "entity_id": "PHARM-IN-00025",
+        "entity_type": [
+          "Pharmacy"
+        ],
+        "status": "notified",
+        "updated_at": "2026-04-04T17:07:40Z"
+      }
+    ],
+    "status": "completed",
+    "initiated_at": "2026-04-02T17:07:40Z",
+    "updated_at": "2026-04-02T17:07:40Z"
+  }
+]

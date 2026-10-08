@@ -1,0 +1,11 @@
+recall_id,batch_id,reason,recall_class,initiated_at,status
+RECALL-2026-D7457A,BATCH-2026-00A6CD,Sub-potent active ingredient identified in stability testing,Class II,2026-03-28T07:05:04Z,in_progress
+RECALL-2026-19D32C,BATCH-2026-19BD0B,Foreign particulate matter found in a subset of units,Class III,2026-03-17T05:54:52Z,completed
+RECALL-2026-2CBAC5,BATCH-2026-6A4ED4,Packaging defect risking loss of sterility,Class II,2026-03-10T06:37:50Z,in_progress
+RECALL-2026-40FDC2,BATCH-2026-8537E8,Packaging defect risking loss of sterility,Class III,2026-04-01T18:15:52Z,completed
+RECALL-2025-528C05,BATCH-2025-4E1A0F,Deviation from Good Manufacturing Practice (GMP) identified at plant,Class II,2025-12-17T07:49:34Z,in_progress
+RECALL-2025-CF3DC5,BATCH-2025-E4DBFD,Sub-potent active ingredient identified in stability testing,Class III,2025-12-24T19:44:01Z,in_progress
+RECALL-2026-D56D7D,BATCH-2026-221D57,Contamination detected in retained sample during routine QC audit,Class II,2026-07-29T22:39:38Z,completed
+RECALL-2026-CF5C77,BATCH-2026-0ECCAE,Adverse event reports exceeding expected threshold,Class II,2026-03-18T00:25:00Z,completed
+RECALL-2025-298BB2,BATCH-2025-94ACCB,Deviation from Good Manufacturing Practice (GMP) identified at plant,Class I,2025-12-15T18:57:36Z,completed
+RECALL-2026-0F138B,BATCH-2026-AA3E6D,Adverse event reports exceeding expected threshold,Class II,2026-04-02T17:07:40Z,completed

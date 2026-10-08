@@ -1,0 +1,136 @@
+entity_id,name,entity_type,city,country,license_number
+MFG-IN-00001,Aarav Life Sciences,manufacturer,Mumbai,IN,LIC-MAN-100000
+MFG-IN-00002,Sunrise Pharmaceuticals,manufacturer,Hyderabad,IN,LIC-MAN-100001
+MFG-IN-00003,Meridian Biotech,manufacturer,Jaipur,IN,LIC-MAN-100002
+MFG-IN-00004,Vertex Formulations,manufacturer,Ahmedabad,IN,LIC-MAN-100003
+MFG-IN-00005,Crescent Pharma,manufacturer,Ahmedabad,IN,LIC-MAN-100004
+MFG-IN-00006,Nova Therapeutics,manufacturer,Delhi,IN,LIC-MAN-100005
+MFG-IN-00007,Silverline Drugs,manufacturer,Mumbai,IN,LIC-MAN-100006
+MFG-IN-00008,Pinnacle Biosciences,manufacturer,Visakhapatnam,IN,LIC-MAN-100007
+MFG-IN-00009,Everest Pharmaceuticals,manufacturer,Bengaluru,IN,LIC-MAN-100008
+MFG-IN-00010,Solaris Life Sciences,manufacturer,Patna,IN,LIC-MAN-100009
+MFG-IN-00011,Zenith Formulations,manufacturer,Indore,IN,LIC-MAN-100010
+MFG-IN-00012,Trident Pharma,manufacturer,Chennai,IN,LIC-MAN-100011
+MFG-IN-00013,Orbit Biosciences,manufacturer,Hyderabad,IN,LIC-MAN-100012
+MFG-IN-00014,Cascade Therapeutics,manufacturer,Bengaluru,IN,LIC-MAN-100013
+MFG-IN-00015,Meadow Pharma,manufacturer,Kolkata,IN,LIC-MAN-100014
+DIST-IN-00001,National Drug Distributors,distributor,Ahmedabad,IN,LIC-DIS-100000
+DIST-IN-00002,MedLine Distribution,distributor,Kochi,IN,LIC-DIS-100001
+DIST-IN-00003,PharmaLink Distributors,distributor,Chandigarh,IN,LIC-DIS-100002
+DIST-IN-00004,CarePath Distribution,distributor,Hyderabad,IN,LIC-DIS-100003
+DIST-IN-00005,Unity Pharma Distribution,distributor,Visakhapatnam,IN,LIC-DIS-100004
+DIST-IN-00006,Continental Drug Distributors,distributor,Kolkata,IN,LIC-DIS-100005
+DIST-IN-00007,Sterling Pharma Logistics,distributor,Visakhapatnam,IN,LIC-DIS-100006
+DIST-IN-00008,Horizon Distribution Network,distributor,Indore,IN,LIC-DIS-100007
+DIST-IN-00009,Metro Drug Distributors,distributor,Ahmedabad,IN,LIC-DIS-100008
+DIST-IN-00010,Prime Pharma Supply,distributor,Bhopal,IN,LIC-DIS-100009
+DIST-IN-00011,Anchor Distribution Co.,distributor,Patna,IN,LIC-DIS-100010
+DIST-IN-00012,Beacon Pharma Distributors,distributor,Jaipur,IN,LIC-DIS-100011
+DIST-IN-00013,Frontier Drug Distribution,distributor,Hyderabad,IN,LIC-DIS-100012
+DIST-IN-00014,Summit Pharma Logistics,distributor,Pune,IN,LIC-DIS-100013
+DIST-IN-00015,Coastal Distributors,distributor,Indore,IN,LIC-DIS-100014
+DIST-IN-00016,Redwood Drug Distribution,distributor,Coimbatore,IN,LIC-DIS-100015
+DIST-IN-00017,Vantage Pharma Distributors,distributor,Jaipur,IN,LIC-DIS-100016
+DIST-IN-00018,Keystone Distribution,distributor,Delhi,IN,LIC-DIS-100017
+DIST-IN-00019,Ridgeline Pharma Supply,distributor,Kolkata,IN,LIC-DIS-100018
+DIST-IN-00020,Elevate Distributors,distributor,Coimbatore,IN,LIC-DIS-100019
+DIST-IN-00021,Northstar Drug Distribution,distributor,Mumbai,IN,LIC-DIS-100020
+DIST-IN-00022,Bluewave Pharma Distributors,distributor,Bengaluru,IN,LIC-DIS-100021
+DIST-IN-00023,Ironclad Distribution Co.,distributor,Nagpur,IN,LIC-DIS-100022
+DIST-IN-00024,Highland Drug Distributors,distributor,Mumbai,IN,LIC-DIS-100023
+DIST-IN-00025,Meridian Distribution Network,distributor,Vellore,IN,LIC-DIS-100024
+WHS-IN-00001,City Wholesale Pharma,wholesaler,Vellore,IN,LIC-WHO-100000
+WHS-IN-00002,Regional Drug Wholesalers,wholesaler,Chandigarh,IN,LIC-WHO-100001
+WHS-IN-00003,Union Pharma Wholesale,wholesaler,Jaipur,IN,LIC-WHO-100002
+WHS-IN-00004,Gateway Wholesale Drugs,wholesaler,Chennai,IN,LIC-WHO-100003
+WHS-IN-00005,Central Pharma Traders,wholesaler,Bhopal,IN,LIC-WHO-100004
+WHS-IN-00006,Everstock Wholesale Pharma,wholesaler,Visakhapatnam,IN,LIC-WHO-100005
+WHS-IN-00007,Landmark Drug Wholesalers,wholesaler,Mumbai,IN,LIC-WHO-100006
+WHS-IN-00008,Riverside Pharma Wholesale,wholesaler,Nagpur,IN,LIC-WHO-100007
+WHS-IN-00009,Capital Drug Traders,wholesaler,Bengaluru,IN,LIC-WHO-100008
+WHS-IN-00010,Harborview Wholesale Pharma,wholesaler,Visakhapatnam,IN,LIC-WHO-100009
+WHS-IN-00011,Greenfield Drug Wholesalers,wholesaler,Lucknow,IN,LIC-WHO-100010
+WHS-IN-00012,Oakridge Pharma Traders,wholesaler,Chandigarh,IN,LIC-WHO-100011
+WHS-IN-00013,Westgate Wholesale Drugs,wholesaler,Vellore,IN,LIC-WHO-100012
+WHS-IN-00014,Eastline Pharma Wholesale,wholesaler,Patna,IN,LIC-WHO-100013
+WHS-IN-00015,Millbrook Drug Traders,wholesaler,Kolkata,IN,LIC-WHO-100014
+WHS-IN-00016,Fairview Wholesale Pharma,wholesaler,Bengaluru,IN,LIC-WHO-100015
+WHS-IN-00017,Stonebridge Drug Wholesalers,wholesaler,Chennai,IN,LIC-WHO-100016
+WHS-IN-00018,Clearwater Pharma Traders,wholesaler,Ahmedabad,IN,LIC-WHO-100017
+WHS-IN-00019,Brookfield Wholesale Drugs,wholesaler,Lucknow,IN,LIC-WHO-100018
+WHS-IN-00020,Lakeside Pharma Wholesale,wholesaler,Bengaluru,IN,LIC-WHO-100019
+WHS-IN-00021,Hillcrest Drug Traders,wholesaler,Ahmedabad,IN,LIC-WHO-100020
+WHS-IN-00022,Parkside Wholesale Pharma,wholesaler,Mumbai,IN,LIC-WHO-100021
+WHS-IN-00023,Southgate Drug Wholesalers,wholesaler,Nagpur,IN,LIC-WHO-100022
+WHS-IN-00024,Northfield Pharma Traders,wholesaler,Jaipur,IN,LIC-WHO-100023
+WHS-IN-00025,Wellspring Wholesale Drugs,wholesaler,Bhopal,IN,LIC-WHO-100024
+WHS-IN-00026,Ashford Pharma Wholesale,wholesaler,Vellore,IN,LIC-WHO-100025
+WHS-IN-00027,Kingsley Drug Traders,wholesaler,Pune,IN,LIC-WHO-100026
+WHS-IN-00028,Dunmore Wholesale Pharma,wholesaler,Vellore,IN,LIC-WHO-100027
+WHS-IN-00029,Fernwood Drug Wholesalers,wholesaler,Vellore,IN,LIC-WHO-100028
+WHS-IN-00030,Glenmoor Pharma Traders,wholesaler,Kolkata,IN,LIC-WHO-100029
+WHS-IN-00031,Harrowgate Wholesale Drugs,wholesaler,Jaipur,IN,LIC-WHO-100030
+WHS-IN-00032,Ivywood Pharma Wholesale,wholesaler,Bengaluru,IN,LIC-WHO-100031
+WHS-IN-00033,Juniper Drug Traders,wholesaler,Chandigarh,IN,LIC-WHO-100032
+WHS-IN-00034,Kestrel Wholesale Pharma,wholesaler,Pune,IN,LIC-WHO-100033
+WHS-IN-00035,Larkspur Drug Wholesalers,wholesaler,Visakhapatnam,IN,LIC-WHO-100034
+PHARM-IN-00001,HealthPlus Pharmacy,pharmacy,Ahmedabad,IN,LIC-PHA-100000
+PHARM-IN-00002,MediCare Chemist,pharmacy,Pune,IN,LIC-PHA-100001
+PHARM-IN-00003,CityCare Pharmacy,pharmacy,Bhopal,IN,LIC-PHA-100002
+PHARM-IN-00004,WellLife Pharmacy,pharmacy,Nagpur,IN,LIC-PHA-100003
+PHARM-IN-00005,GreenCross Chemist,pharmacy,Jaipur,IN,LIC-PHA-100004
+PHARM-IN-00006,TrustCare Pharmacy,pharmacy,Visakhapatnam,IN,LIC-PHA-100005
+PHARM-IN-00007,LifeLine Pharmacy,pharmacy,Ahmedabad,IN,LIC-PHA-100006
+PHARM-IN-00008,CarePoint Chemist,pharmacy,Coimbatore,IN,LIC-PHA-100007
+PHARM-IN-00009,VitalCare Pharmacy,pharmacy,Chennai,IN,LIC-PHA-100008
+PHARM-IN-00010,PrimeHealth Pharmacy,pharmacy,Ahmedabad,IN,LIC-PHA-100009
+PHARM-IN-00011,SunCare Chemist,pharmacy,Chennai,IN,LIC-PHA-100010
+PHARM-IN-00012,MedTrust Pharmacy,pharmacy,Coimbatore,IN,LIC-PHA-100011
+PHARM-IN-00013,FamilyCare Pharmacy,pharmacy,Nagpur,IN,LIC-PHA-100012
+PHARM-IN-00014,QuickCare Chemist,pharmacy,Jaipur,IN,LIC-PHA-100013
+PHARM-IN-00015,HealthFirst Pharmacy,pharmacy,Bengaluru,IN,LIC-PHA-100014
+PHARM-IN-00016,MediPlus Chemist,pharmacy,Kolkata,IN,LIC-PHA-100015
+PHARM-IN-00017,CareWell Pharmacy,pharmacy,Patna,IN,LIC-PHA-100016
+PHARM-IN-00018,TrueCare Chemist,pharmacy,Coimbatore,IN,LIC-PHA-100017
+PHARM-IN-00019,NeighborCare Pharmacy,pharmacy,Kolkata,IN,LIC-PHA-100018
+PHARM-IN-00020,SwiftCare Chemist,pharmacy,Surat,IN,LIC-PHA-100019
+PHARM-IN-00021,HealthPlus Pharmacy (North),pharmacy,Nagpur,IN,LIC-PHA-100020
+PHARM-IN-00022,MediCare Chemist (South),pharmacy,Bhopal,IN,LIC-PHA-100021
+PHARM-IN-00023,CityCare Pharmacy (East),pharmacy,Delhi,IN,LIC-PHA-100022
+PHARM-IN-00024,WellLife Pharmacy (West),pharmacy,Jaipur,IN,LIC-PHA-100023
+PHARM-IN-00025,GreenCross Chemist (Central),pharmacy,Delhi,IN,LIC-PHA-100024
+PHARM-IN-00026,TrustCare Pharmacy (North),pharmacy,Ahmedabad,IN,LIC-PHA-100025
+PHARM-IN-00027,LifeLine Pharmacy (South),pharmacy,Visakhapatnam,IN,LIC-PHA-100026
+PHARM-IN-00028,CarePoint Chemist (East),pharmacy,Visakhapatnam,IN,LIC-PHA-100027
+PHARM-IN-00029,VitalCare Pharmacy (West),pharmacy,Jaipur,IN,LIC-PHA-100028
+PHARM-IN-00030,PrimeHealth Pharmacy (Central),pharmacy,Patna,IN,LIC-PHA-100029
+PHARM-IN-00031,SunCare Chemist (North),pharmacy,Indore,IN,LIC-PHA-100030
+PHARM-IN-00032,MedTrust Pharmacy (South),pharmacy,Patna,IN,LIC-PHA-100031
+PHARM-IN-00033,FamilyCare Pharmacy (East),pharmacy,Nagpur,IN,LIC-PHA-100032
+PHARM-IN-00034,QuickCare Chemist (West),pharmacy,Vellore,IN,LIC-PHA-100033
+PHARM-IN-00035,HealthFirst Pharmacy (Central),pharmacy,Ahmedabad,IN,LIC-PHA-100034
+PHARM-IN-00036,MediPlus Chemist (North),pharmacy,Delhi,IN,LIC-PHA-100035
+PHARM-IN-00037,CareWell Pharmacy (South),pharmacy,Kochi,IN,LIC-PHA-100036
+PHARM-IN-00038,TrueCare Chemist (East),pharmacy,Surat,IN,LIC-PHA-100037
+PHARM-IN-00039,NeighborCare Pharmacy (West),pharmacy,Bengaluru,IN,LIC-PHA-100038
+PHARM-IN-00040,SwiftCare Chemist (Central),pharmacy,Chennai,IN,LIC-PHA-100039
+PHARM-IN-00041,HealthPlus Pharmacy (North),pharmacy,Mumbai,IN,LIC-PHA-100040
+PHARM-IN-00042,MediCare Chemist (South),pharmacy,Delhi,IN,LIC-PHA-100041
+PHARM-IN-00043,CityCare Pharmacy (East),pharmacy,Pune,IN,LIC-PHA-100042
+PHARM-IN-00044,WellLife Pharmacy (West),pharmacy,Indore,IN,LIC-PHA-100043
+PHARM-IN-00045,GreenCross Chemist (Central),pharmacy,Chandigarh,IN,LIC-PHA-100044
+PHARM-IN-00046,TrustCare Pharmacy (North),pharmacy,Bengaluru,IN,LIC-PHA-100045
+PHARM-IN-00047,LifeLine Pharmacy (South),pharmacy,Nagpur,IN,LIC-PHA-100046
+PHARM-IN-00048,CarePoint Chemist (East),pharmacy,Nagpur,IN,LIC-PHA-100047
+PHARM-IN-00049,VitalCare Pharmacy (West),pharmacy,Chandigarh,IN,LIC-PHA-100048
+PHARM-IN-00050,PrimeHealth Pharmacy (Central),pharmacy,Bhopal,IN,LIC-PHA-100049
+PHARM-IN-00051,SunCare Chemist (North),pharmacy,Kochi,IN,LIC-PHA-100050
+PHARM-IN-00052,MedTrust Pharmacy (South),pharmacy,Jaipur,IN,LIC-PHA-100051
+PHARM-IN-00053,FamilyCare Pharmacy (East),pharmacy,Visakhapatnam,IN,LIC-PHA-100052
+PHARM-IN-00054,QuickCare Chemist (West),pharmacy,Hyderabad,IN,LIC-PHA-100053
+PHARM-IN-00055,HealthFirst Pharmacy (Central),pharmacy,Mumbai,IN,LIC-PHA-100054
+PHARM-IN-00056,MediPlus Chemist (North),pharmacy,Visakhapatnam,IN,LIC-PHA-100055
+PHARM-IN-00057,CareWell Pharmacy (South),pharmacy,Jaipur,IN,LIC-PHA-100056
+PHARM-IN-00058,TrueCare Chemist (East),pharmacy,Coimbatore,IN,LIC-PHA-100057
+PHARM-IN-00059,NeighborCare Pharmacy (West),pharmacy,Mumbai,IN,LIC-PHA-100058
+PHARM-IN-00060,SwiftCare Chemist (Central),pharmacy,Lucknow,IN,LIC-PHA-100059

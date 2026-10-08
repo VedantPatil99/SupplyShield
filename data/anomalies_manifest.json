@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "generated_at": "2026-08-25T00:00:00Z",
+  "planted_anomalies": [
+    {
+      "type": "multi_manufacturer_batch",
+      "batch_id": "BATCH-2026-B64675",
+      "detail": "Batch BATCH-2026-B64675 is legitimately produced by MFG-IN-00015 but a second PRODUCED relationship from MFG-IN-00013 has been planted (via an extra Neo4j edge created from the anomaly-seed transaction). Detect with the 'multi-manufacturer batch' Cypher query."
+    },
+    {
+      "type": "duplicate_batch_fanin",
+      "batch_id": "BATCH-2025-A7B41D",
+      "detail": "Batch BATCH-2025-A7B41D shipped into WHS-IN-00009 from two different senders (DIST-IN-00002 and DIST-IN-00003) only 3 hours apart (shipments SHIP-CEAE76 and SHIP-25C36C). Detect with the duplicate-batch fan-in Cypher query (Listing 4.8 in the proposal)."
+    },
+    {
+      "type": "abnormal_fanout",
+      "batch_id": "BATCH-2026-F14542",
+      "detail": "Distributor DIST-IN-00001 ships batch BATCH-2026-F14542 to 18 distinct wholesalers in rapid succession, far above the network average out-degree. Detect with the abnormal fan-out heuristic."
+    },
+    {
+      "type": "reentrant_distribution",
+      "batch_id": "BATCH-2025-0B0618",
+      "detail": "Pharmacy PHARM-IN-00004 receives batch BATCH-2025-0B0618 twice, once from WHS-IN-00028 and once from WHS-IN-00033, a day apart. Detect with the re-entrant / repeat-receipt Cypher query."
+    }
+  ]
+}
