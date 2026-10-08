@@ -103,6 +103,13 @@ async function start() {
   } else {
     const neoDir = findDir('neo4j-community-');
     if (!neoDir) throw new Error(`Neo4j not found in ${TOOLS}`);
+    // Neo4j 5 needs Java 17 or 21; fail clearly instead of timing out on the port wait.
+    const java = spawnSync('java', ['-version'], { encoding: 'utf8' });
+    const jv = `${java.stderr || ''}${java.stdout || ''}`.match(/version "(\d+)/);
+    if (java.status !== 0 || !jv) {
+      throw new Error('Java was not found. Neo4j 5 needs Java 17 or 21 (e.g. Eclipse Temurin 21 from https://adoptium.net); install it, reopen the terminal, and retry.');
+    }
+    if (![17, 21].includes(Number(jv[1]))) console.warn(`Warning: Java ${jv[1]} detected; Neo4j 5.26 supports Java 17 and 21.`);
     const bin = (n) => path.join(neoDir, 'bin', isWin ? `${n}.bat` : n);
     const authFile = path.join(neoDir, 'data', 'dbms', 'auth.ini');
     if (!fs.existsSync(authFile)) {

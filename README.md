@@ -60,7 +60,9 @@ Findings are upserted with deterministic ids, so re-runs are idempotent and neve
 ## Local setup (Windows, no Docker)
 
 The handoff specified Docker Compose; on request this build runs **MongoDB and Neo4j as local portable processes** instead
-(no Docker or WSL on the development machine). Requirements: **Node.js 18+**, **Java 17 or 21** (for Neo4j), ~1.5 GB disk.
+(no Docker or WSL on the development machine). Requirements: **Node.js 18+** ([nodejs.org](https://nodejs.org)),
+**Java 17 or 21** for Neo4j (e.g. [Eclipse Temurin 21](https://adoptium.net); check with `java -version`), **Git**, ~1.5 GB disk.
+Ports 4000, 27017, 7474 and 7687 must be free.
 
 1. **Get the portable databases** into `supplyshield/.tools/` (git-ignored):
    ```powershell
