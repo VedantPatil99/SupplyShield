@@ -16,16 +16,6 @@ const DEMO_GROUPS = [
       { u: 'pharm_healthplus', p: 'Pharm@12345', role: 'pharmacy', who: 'HealthPlus Pharmacy', hint: 'Receive deliveries, check medicine' },
     ],
   },
-  {
-    title: 'Demo scenarios',
-    users: [
-      { u: 'pharm_suspect', p: 'Pharm@12345', role: 'pharmacy', who: 'Pharmacy with suspicious stock', hint: 'Checks a batch that turns out not genuine' },
-      { u: 'pharm_recall', p: 'Pharm@12345', role: 'pharmacy', who: 'Pharmacy holding recalled stock', hint: 'Responds to a recall step by step' },
-      { u: 'mfg_vertex', p: 'Mfg@12345', role: 'manufacturer', who: 'Vertex Formulations', hint: 'Follows its own recall' },
-      { u: 'mfg_meadow', p: 'Mfg@12345', role: 'manufacturer', who: 'Meadow Pharma', hint: 'Owns the batches with suspicious activity' },
-      { u: 'mfg_sunrise', p: 'Mfg@12345', role: 'manufacturer', who: 'Sunrise Pharmaceuticals', hint: 'Owns a batch shipped suspiciously widely' },
-    ],
-  },
 ];
 
 function Login() {

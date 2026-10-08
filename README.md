@@ -121,7 +121,7 @@ On macOS/Linux the same scripts work with the corresponding MongoDB/Neo4j tarbal
 | pharm_recall | Pharm@12345 | pharmacy | PHARM-IN-00042 | still `notified` on RECALL-2026-D7457A → live recall actions |
 | pharm_suspect | Pharm@12345 | pharmacy | PHARM-IN-00004 | received BATCH-2025-0B0618 via provenance-gap shipments → ✕ verification |
 
-The login page has one-click demo buttons for all of them. Passwords are bcrypt-hashed by the seed (cost 10).
+The login page has one-click buttons for the first six accounts. The five scenario accounts (mfg_meadow, mfg_sunrise, mfg_vertex, pharm_recall, pharm_suspect) are signed in with "Sign in with a username and password instead". Passwords are bcrypt-hashed by the seed (cost 10).
 
 ## Suggested demo flow
 
